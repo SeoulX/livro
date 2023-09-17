@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="{% static 'livroApp/css/landing.css' %}" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>livro</title>
+</head>
+<body>
+    <div class="navbar" id="myNavbar">
+        <div class="logo">
+            <a href="#">
+                <img src="{% static 'livroApp/img/logo.png' %}" alt="Logo" width="100">
+            </a>
+        </div>
+        <div class="navbar-links">
+            <a href="#">Home</a>
+            <a href="#">About Us</a>
+        </div>
+        <div class="navbar-actions">
+            <div class="login-signup">
+                <a href="#">Login</a>
+                <span>|</span>
+                <a href="#">SignUp</a>
+            </div>
+            <div class="search-icon">
+                <a href="#" class="search-icon">
+                    <img src="{% static 'livroApp/img/search.png' %}" alt="Search" width="20">
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'livroApp/js/landing.js' %}"></script>
+</body>
+</html>

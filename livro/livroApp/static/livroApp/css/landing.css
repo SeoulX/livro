@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #F2F7FF;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+.navbar-shadow {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar a {
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    text-decoration: none;
+    padding: 15px 30px;
+}
+
+/* Remove the hover effect for all navbar links */
+.navbar a:hover {
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+}
+
+.logo {
+    padding: 10px 0;
+}
+
+/* Increase the logo size */
+.logo img {
+    width: 150px; /* Adjust the width as needed for a larger logo */
+}
+
+.navbar-links {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
+}
+
+.navbar-actions {
+    display: flex;
+    align-items: center;
+}
+
+.login-signup {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.search-icon {
+    align-items: center;
+}
+
+.search-icon img {
+    display: block;
+    margin: 0 auto;
+    width: 30px;
+}
