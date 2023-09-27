@@ -1,3 +1,4 @@
+
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
@@ -8,3 +9,16 @@ function scrollFunction() {
         navbar.classList.remove("navbar-shadow"); // Remove the shadow class
     }
 }
+const searchNav = document.getElementById("searchNav");
+const closeBtn = document.getElementById("closeBtn");
+const searchIcon = document.querySelector(".search-icon");
+
+// Open the search navigation
+searchIcon.addEventListener("click", () => {
+    searchNav.style.width = "25%"; // Adjust the width as needed
+});
+
+// Close the search navigation
+closeBtn.addEventListener("click", () => {
+    searchNav.style.width = "0";
+});
