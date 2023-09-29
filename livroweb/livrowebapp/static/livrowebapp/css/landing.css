@@ -11,27 +11,12 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
+    padding: 20px 5%;
 }
-
-.navbar-shadow {
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+.container{
+    display: flex;
+    flex-direction: column;
 }
-
-.navbar a {
-    font-size: 18px;
-    color: rgb(0, 0, 0);
-    text-align: center;
-    text-decoration: none;
-    padding: 15px 30px;
-}
-
-/* Remove the hover effect for all navbar links */
-.navbar a:hover {
-    background-color: transparent;
-    color: rgb(0, 0, 0);
-}
-
 .logo {
     padding: 10px 0;
 }
@@ -44,25 +29,28 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 30vh; /* Set a fixed height to center vertically, adjust as needed */ 
+    flex: 1;
 }
 .tagline {
     display: flex;
     font-size: 90%;
     justify-content: center;
     align-items: center;
-    height: 5vh;
+    flex: .2;
     font: Tahoma;
 }
 .desc {
     display: flex;
     font-size: 70%;
     align-items: center;
-    height: 25vh;
+    flex: 1;
     margin: 0% 20% 0% 20%;
     font: Tahoma;
     line-height: 1.5;
     text-align: justify;
+}
+.desc h2 {
+    padding: 0% 3% 0% 3%;
 }
 .browse {
     background-color: #191c1a;
@@ -111,37 +99,15 @@ body {
 }
 .buttons {
     display: flex;
-    height: 0vh;
     align-items: center;
     justify-content: center;
+    flex: 1.5;
 }
 
 /* Increase the logo size */
 .logo1 img {
     width: 500px; /* Adjust the width as needed for a larger logo */
 }
-@media screen and (max-width: 576px) {
-    body {
-      font-size: 16px;
-    }
-    .logo1 img {
-        width: 100%;
-    }
-    
-    .desc {
-        margin: 0;
-    }
-    
-    .buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .browse,
-    .login,
-    .signup {
-        margin: 10px 0;
-    }
-}
+
       
   
