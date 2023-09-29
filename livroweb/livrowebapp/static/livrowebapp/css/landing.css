@@ -39,6 +39,25 @@ body {
 .logo img {
     width: 150px; /* Adjust the width as needed for a larger logo */
 }
+.logo1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh; /* Set a fixed height to center vertically, adjust as needed */ 
+}
+.tagline {
+    display: flex;
+    font-size: 90%;
+    justify-content: center;
+    align-items: center;
+    height: 0vh;
+    font: Tahoma;
+}
+
+/* Increase the logo size */
+.logo1 img {
+    width: 500px; /* Adjust the width as needed for a larger logo */
+}
 
 .navbar-links {
     display: flex;
