@@ -50,8 +50,19 @@ body {
     font-size: 90%;
     justify-content: center;
     align-items: center;
-    height: 0vh;
+    height: 5vh;
     font: Tahoma;
+}
+
+.desc {
+    display: flex;
+    font-size: 70%;
+    align-items: center;
+    height: 21vh;
+    margin: 0% 20% 0% 20%;
+    font: Tahoma;
+    line-height: 1.5;
+    text-align: justify;
 }
 
 /* Increase the logo size */
