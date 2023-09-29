@@ -1,49 +1,24 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link href="{% static 'livrowebapp/css/landing.css' %}" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <link href="{% static 'livrowebapp/css/landing.css' %}" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>livro</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="navbar" id="myNavbar">
-        <div class="logo">
-            <a href="#">
-                <img src="{% static 'livrowebapp/img/logo.png' %}" alt="Logo" width="100">
-            </a>
-        </div>
-        <div class="navbar-links">
-            <a href="#">Home</a>
-            <a href="#">About Us</a>
-        </div>
-        <div class="navbar-actions">
-            <div class="login-signup">
-                <a href="#">Login</a>
-                <span>|</span>
-                <a href="#">SignUp</a>
-            </div>
-            <div class="search-icon">
-                <a href="#" class="search-icon">
-                    <img src="{% static 'livrowebapp/img/search.png' %}" alt="Search" width="20">
-                </a>
-            </div>
-        </div>
-    </div>
-    <div class="search-nav" id="searchNav">
-        <div class="search-content">
-            <span class="close-btn" id="closeBtn">&times;</span>
-            <h2>Search</h2>
-            <input type="text" placeholder="Search...">
-            <div class="genre-buttons">
-                <button>Genre 1</button>
-                <button>Genre 2</button>
-                <button>Genre 3</button>
-                <!-- Add more genre buttons as needed -->
-            </div>
-        </div>
+      <div class="logo">
+        <a href="#">
+          <img
+            src="{% static 'livrowebapp/img/logo.png' %}"
+            alt="Logo"
+            width="100"
+          />
+        </a>
+      </div>
     </div>
     <script src="{% static 'livrowebapp/js/landing.js' %}"></script>
-</body>
+  </body>
 </html>
