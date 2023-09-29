@@ -1,7 +1,8 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: Tahoma;
     margin: 0;
     padding: 0;
+    position: relative;
 }
 
 .navbar {
@@ -53,109 +54,94 @@ body {
     height: 5vh;
     font: Tahoma;
 }
-
 .desc {
     display: flex;
     font-size: 70%;
     align-items: center;
-    height: 21vh;
+    height: 25vh;
     margin: 0% 20% 0% 20%;
     font: Tahoma;
     line-height: 1.5;
     text-align: justify;
+}
+.browse {
+    background-color: #191c1a;
+    border: none;
+    color: lightgray;
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 6px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    border-radius: 50px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.login {
+    background-color: #191c1a;
+    border: none;
+    color: lightgray;
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 6px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    border-radius: 50px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.signup {
+    background-color: #191c1a;
+    border: none;
+    color: lightgray;
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 6px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    border-radius: 50px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.buttons {
+    display: flex;
+    height: 0vh;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Increase the logo size */
 .logo1 img {
     width: 500px; /* Adjust the width as needed for a larger logo */
 }
-
-.navbar-links {
-    display: flex;
-    justify-content: flex-end;
-    flex: 1;
+@media screen and (max-width: 576px) {
+    body {
+      font-size: 16px;
+    }
+    .logo1 img {
+        width: 100%;
+    }
+    
+    .desc {
+        margin: 0;
+    }
+    
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .browse,
+    .login,
+    .signup {
+        margin: 10px 0;
+    }
 }
-
-.navbar-actions {
-    display: flex;
-    align-items: center;
-}
-
-.login-signup {
-    display: flex;
-    align-items: center;
-    margin-right: 20px;
-}
-
-.search-icon {
-    align-items: center;
-}
-
-.search-icon img {
-    display: block;
-    margin: 0 auto;
-    width: 30px;
-}
-.search-nav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.8);
-    overflow-y: auto;
-    transition: width 0.5s ease-in-out;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.search-content {
-    position: absolute; /* Position it absolutely within search-nav */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    text-align: center;
-}
-
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 24px;
-    cursor: pointer;
-    color: #000000;
-}
-
-h2 {
-    margin-top: 0;
-}
-
-.input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.genre-buttons {
-    margin-top: 20px;
-}
-
-.genre-buttons button {
-    padding: 10px 20px;
-    margin: 5px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
+      
+  
