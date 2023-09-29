@@ -1,10 +1,15 @@
+/* Global styles */
 body {
     font-family: Tahoma;
     margin: 0;
     padding: 0;
     position: relative;
+    min-height: 100vh; /* Ensure a minimum height of the viewport */
+    display: flex;
+    flex-direction: column; /* Make the body a flex container */
 }
 
+/* Navbar styles */
 .navbar {
     background-color: #e3ecfc;
     overflow: hidden;
@@ -13,18 +18,26 @@ body {
     align-items: center;
     padding: 20px 5%;
 }
-.container-body{
+
+/* Container styles */
+.container-body {
     display: flex;
     flex-direction: column;
     margin: 10% 10px 10% 10px;
 }
-.logo {
-    padding: 10px 0;
+
+/* Logo styles */
+.logo, .logo1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
 }
 
 /* Increase the logo size */
-.logo img {
-    width: 150px; /* Adjust the width as needed for a larger logo */
+.logo img{
+    max-width: 100%; /* Ensure the logo scales properly */
+    height: auto;
 }
 .logo1 {
     display: flex;
@@ -33,104 +46,94 @@ body {
     flex: 1;
     margin: 10px 0px 10px 0px;
 }
-/* Increase the logo size */
+
 .logo1 img {
-    width: 500px; /* Adjust the width as needed for a larger logo */
+    width: 100%; /* Use width: 100% to ensure responsiveness */
+    max-width: 500px; /* Set a maximum width for the image to make it bigger */
+    height: auto; /* Maintain the image's aspect ratio */
 }
+
+/* Tagline styles */
 .tagline {
     display: flex;
     font-size: 90%;
     justify-content: center;
     align-items: center;
-    flex: .2;
     font: Tahoma;
 }
+
+/* Description styles */
 .desc {
     display: flex;
     font-size: 70%;
     align-items: center;
-    flex: 1;
     margin: 0% 20% 0% 20%;
     font: Tahoma;
     line-height: 1.5;
     text-align: justify;
 }
+
 .desc h2 {
     padding: 0% 3% 0% 3%;
 }
-.browse {
-    background-color: #191c1a;
-    border: none;
-    color: lightgray;
-    padding: 10px 30px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 6px 10px;
-    cursor: pointer;
-    border-radius: 4px;
-    border-radius: 50px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-}
-.login {
-    background-color: #191c1a;
-    border: none;
-    color: lightgray;
-    padding: 10px 30px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 6px 10px;
-    cursor: pointer;
-    border-radius: 4px;
-    border-radius: 50px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-}
-.signup {
-    background-color: #191c1a;
-    border: none;
-    color: lightgray;
-    padding: 10px 30px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 6px 10px;
-    cursor: pointer;
-    border-radius: 4px;
-    border-radius: 50px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-}
+
+/* Button styles */
 .buttons {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex: 1;
-    padding: 1% 0% 1% 0%
+    padding: 1% 0% 1% 0%;
 }
 
-      
+.browse, .login, .signup {
+    background-color: #191c1a;
+    border: none;
+    color: lightgray;
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 6px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    border-radius: 50px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer styles */
 .footer {
     background-color: #333333;
     padding: 20px;
-  }
-  
-  .footer-container {
+    margin-top: auto; /* Push the footer to the bottom */
+}
+
+.footer-container {
     display: flex;
     justify-content: space-between;
-  }
-  
-  .footer-left {
-    display: flex;
-  }
-  .footer-copyright {
+}
+
+.footer-copyright {
     text-align: center;
-  }
-  
-  .footer-copyright p {
+}
+
+.footer-copyright p {
     color: #ffffff;
     margin: 0;
-  }
-  
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .container-body {
+        margin: 10% 5px 10% 5px;
+    }
+    
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .browse, .login, .signup {
+        margin: 6px 0;
+    }
+}
