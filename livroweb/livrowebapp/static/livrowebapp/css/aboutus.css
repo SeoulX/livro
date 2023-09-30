@@ -1,0 +1,91 @@
+body {
+    font-family: Tahoma;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    min-height: 100vh; /* Ensure a minimum height of the viewport */
+    display: flex;
+    flex-direction: column; /* Make the body a flex container */
+}
+.navigation{
+    background-color: #e3ecfc;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 19px 5%;
+}
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+/* Increase the logo size */
+.logo img{
+    max-width: 100%; /* Ensure the logo scales properly */
+    height: auto;
+}
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1% 0% 1% 0%;
+}
+
+.home, .abtus, .login, .signup {
+    background-color: #e3ecfc;
+    border: none;
+    color: #000;
+    padding: 9px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    cursor: pointer;
+}
+.aboutus {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.content {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+.content p {
+    font-size: 16px;
+    line-height: 24px;
+}  
+.footer {
+    background-color: #333333;
+    padding: 20px;
+    margin-top: auto; /* Push the footer to the bottom */
+}
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+}
+.footer-copyright {
+    text-align: center;
+}
+.footer-copyright p {
+    color: #ffffff;
+    margin: 0;
+}
+@media (max-width: 768px) {
+    .container-body {
+        margin: 10% 5px 10% 5px;
+    }
+    
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .browse, .login, .signup {
+        margin: 6px 0;
+    }
+}
