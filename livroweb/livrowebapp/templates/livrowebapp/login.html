@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <link href="{% static 'livrowebapp/css/login.css' %}" rel="stylesheet" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>livro</title>
+    </head>
+    <body>
+        <div class="center">
+            <button id="show-login">Login</button>
+        </div>
+        <div class="popup">
+            <div class="close-btn">&times;</div>
+            <div class="form">
+                <div class="logo1">
+                    <a href="#">
+                      <img
+                        src="{% static 'livrowebapp/img/logo.png' %}"
+                        alt="Logo"
+                        width="150"
+                      />
+                    </a>
+                </div>
+                <h2>Create Account</h2>
+                <hr></hr>
+                <div class ="form-element">
+                    <label for="username">Username</label>
+                </div>
+                <div class ="form-element">
+                    <input type="text" id="username">
+                </div>
+                <div class ="form-element">
+                    <label for="email">Email</label>
+                </div>
+                <div class ="form-element">
+                    <input type="text" id="email">
+                </div>
+                <div class ="form-element">
+                    <label for="password">Password</label>
+                    <label for="confirmpassword">Confirm Password</label>
+                </div>
+                <div class ="form-element">
+                    <input type="password" id="password">
+                    <input type="confirmpassword" id="confirmpassword">
+                </div>
+                <div class="form-element">
+                    <input type="checkbox" id="showpassword">
+                    <label for="showpassword">Show Password</label>
+                    <input type="checkbox" id="confirmpasswordshowpassword">
+                    <label for="showconfirmpassword">Show Confirm Password</label>
+                </div>
+                <div class="form-element">
+                    <button>Create Account</button>
+                </div>
+                <div class="form-element">
+                    <label for="account">Already have an account?</label>
+                    <a href="#">Sign In</a>
+                </div>
+
+            </div>
+        </div>
+    </body>
+<html>
