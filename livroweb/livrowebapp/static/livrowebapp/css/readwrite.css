@@ -1,0 +1,61 @@
+body{
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 500px;
+    margin: 0 auto;
+}
+.heading{
+    font-size: 24px;
+    text-align: center;
+}
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ques{
+    display: flex;
+    font-size: 100%;
+    align-items: center;
+    margin: 0% 22% 0% 22%;
+}
+.buttons{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+.readerbtn {
+    width: 8vw;
+    height: 15vh;
+    background-color: #fff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.writerbtn {
+    width: 8vw;
+    height: 15vh;
+    background-color: #fff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.nextbtn{
+    width: 9vw;
+    height: 5vh;
+    background-color: #000;
+    color: #fff;
+    border-radius: 5px;
+    margin: 5% 40% 5% 38%;
+}
+.readerbtn img {
+    width: 50px;
+    height: 50px;
+}
+.writerbtn img {
+    width: 50px;
+    height: 50px;
+}

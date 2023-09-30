@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link href="{% static 'livrowebapp/css/readwrite.css' %}" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>livro</title>
+  </head>
+  <body>
+    <div class = "container">
+      <div class="logo">
+        <img
+          src="{% static 'livrowebapp/img/logo.png' %}"
+          alt="Logo"
+          width="250"/>
+      </div>
+        <h1 class = "heading">Hello "username"!</h1>
+        <p class = "ques">We would like to know more about you.</p>
+        <div class = "buttons">
+            <button class = "readerbtn">
+              <img src="{% static 'livrowebapp/img/reader.png' %}">
+            </button>
+            <button class = "writerbtn">
+              <img src="{% static 'livrowebapp/img/writer.png' %}">
+            </button>
+        </div>
+        <button class = "nextbtn">Next</button>
+    </div>
+  </body>
+  </html>
