@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <link href="{% static 'livrowebapp/css/signin.css' %}" rel="stylesheet" />
+        <meta name="viewport" content="width=761px, height=770px />
+    </head>
+
+
+  <body>
+    
+    <div id= "overlay" class="Overlay">
+    <span class ="closebutton" onclick="closeForm()" title="Close"> &#215</span>
+        <div class="wrap">
+            <center>
+          <img src="{% static 'livrowebapp/img/logo.png' %}"
+            alt="Logo"
+            width="100" >
+               <h1>Sign In</h1>
+            </center>
+
+                <form>
+                   <label for="emailuser">Email/username</label>
+                    <input type ="text" placeholder = "Enter email/Username">
+             
+               <label for="password">Password</label>
+                    <input type ="text" placeholder = "Enter password">
+                    <input type ="submit" value = "Sign in">
+                    <label for="donthaveacc">Don't have an account?<a href="">Sign up</a></label>
+                </form>
+        </div>
+   </div>
+
+  
+    <script src="{% static 'livrowebapp/js/signin.js' %}"></script>
+
+          
+  </body>
+</html>
