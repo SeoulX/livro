@@ -54,18 +54,9 @@ a{display: inline-block;}
 /* NAVBAR END!! */
 
 
-/* Container styles */
-.container-body {
-    display: flex;
-    flex-direction: column;
-    margin: 10px 10px 10px 10px;
-}
-
-
-
 /* BOOKSHELF START */
 .userbookshelf{
-    
+    margin: auto;
     margin-top: -215px;
     padding: 50px;
     background-color: #FFFFFF;
@@ -107,7 +98,8 @@ a{display: inline-block;}
 
 /* ABOUT USER START */
 .aboutuser{
-    margin-top: 100px;
+    margin: auto;
+    margin-top: 2%;
     padding: 50px;
     background-color: #FFFFFF;
     max-width: 300px;
@@ -133,14 +125,13 @@ a{display: inline-block;}
 
   text-align: center;
     padding: 40px;
-    margin: -5%;
+    margin: auto;
     background-color: #FFFFFF;
     box-shadow: 0 2px 9px 0 rgba(0,0,0,.2);
   
 }
 .profilebackground img{
-   
-    margin-top: 60px;
+   margin: auto;
     height: 100PX;
     width: auto;
 }
