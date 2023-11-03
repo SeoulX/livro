@@ -11,3 +11,5 @@ def aboutus(request):
     return render(request, 'livrowebapp/aboutus.html')
 def readwrite(request):
     return render(request, 'livrowebapp/readwrite.html')
+def profile(request):
+    return render(request, 'livrowebapp/profile.html')

@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link href="{% static 'livrowebapp/css/profile.css' %}" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0" />
+    <title>livro</title>
+  </head>
+
+<body>
+    <div class="navbar" id="myNavbar">
+      <div class="logo">
+        <a href="#"><img src="{% static 'livrowebapp/img/logo.png' %}" width="100"/></a>
+      </div>
+
+      <div class="navbarRight">        
+        <tr>
+            <th> <a href="#"> Home</a> </th>
+            <th> <a href="aboutus/"> About Us </a> </th>
+            <th>  <a href="#"> Logout</a> </th>
+            <th>  <a href="#"> <img class="profileicon" src="{% static 'livrowebapp/img/profileicon.png' %}"></a> </th>
+          </tr>
+               
+    </div>
+    </div>
+
+
+    <div class="profilebackground"> 
+        <img src="{% static 'livrowebapp/img/profilepicture.png' %}"/>
+        <p>@username</p>
+        <a button class="editprofile" href="#">Edit Profile</a>
+  
+    </div>
+
+    <div class="profilebottom">
+          
+           <div class="aboutuser">
+
+                <p> <b>About user: </b> <br>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+
+           </div>
+
+           <div class="userbookshelf">
+
+                <p> <b>User Bookshelf</b> <br>
+                    Reading List</p>
+
+        <div class="books">
+
+            <table>
+            <tr>
+                <th>  <a href="#"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a></th>
+                <th>  <a href="#"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
+                <th>  <a href="#"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
+                <th>  <a href="#"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
+                <th>  <a href="#"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
+                <th>  <a href="#"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
+              </tr>
+              <tr>
+                <td><p>Fantasy</p> </td>
+                <td><p>Fantasy</p> </td>
+                <td><p>Fantasy</p> </td>
+                <td><p>Fantasy</p> </td>
+                <td><p>Fantasy</p> </td>
+                <td><p>Fantasy</p> </td>
+              </tr>
+            </table>
+            </div>
+
+           </div>
+          
+    </div>
+
+    
+    <script src="{% static 'livrowebapp/js/landing.js' %}"></script>
+  </body>
+</html>
