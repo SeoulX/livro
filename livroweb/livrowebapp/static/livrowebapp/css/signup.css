@@ -15,7 +15,7 @@ body { /*probably not needed*/
     transform:translate(-50%, -50%);
 }
 
-.center button {     /* This is removable no need for this */
+.center button {     
     padding:10px, 20px;
     font-size: 15px;
     font-weight: 600;
