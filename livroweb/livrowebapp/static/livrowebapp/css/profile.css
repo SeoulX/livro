@@ -3,6 +3,7 @@ body {
     background-color: #f2f7ff;
     font-family: Tahoma;
     margin: 0px;
+    overflow-x: hidden;
 
 }
 
@@ -159,6 +160,6 @@ font-weight: bold;
   html {
     scroll-behavior: smooth;
     max-width: 100%;
-    overflow-x: hidden;
+ overflow-x: hidden;
   }
 }
