@@ -11,4 +11,6 @@ urlpatterns = [
     path('home/', views.home),
     path('addbooks/', views.addbooks),
     path('browse/', views.browse),
+    path('manageprofile/', views.manageprofile),
+
 ]
