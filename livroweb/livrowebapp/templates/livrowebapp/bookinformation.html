@@ -1,0 +1,144 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link href="{% static 'livrowebapp/css/bookinformation.css' %}" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0" />
+    <title>livro</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="navbar" id="myNavbar">
+      <div class="logo">
+        <a href="#"><img src="{% static 'livrowebapp/img/logo.png' %}" width="100"/></a>
+      </div>
+
+      <div class="navbarRight">        
+        <tr>
+            <th> <a href="#"> Home</a> </th>
+            <th> <a href="aboutus/"> About Us </a> </th>
+            <th>  <a href="#"> Logout</a> </th>
+            <th>  <a href="#"> <img class="profileicon" src="{% static 'livrowebapp/img/profileicon.png' %}"></a> </th>
+          </tr>
+               
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="container" id="book-content">
+            <div class="row">
+                <div id="book-poster">
+                    <img class="img-responsive" src="{% static 'livrowebapp/img/book1.png' %}">
+                    <div class="post-rating-container">
+                        <div class="post-rating">
+                            <span class="post-rating-button material-icons">thumb_up</span>
+                            <span class="post-rating-count">0</span>
+                        </div>
+                        <div class="post-rating">
+                            <span class="post-rating-button material-icons">thumb_down</span>
+                            <span class="post-rating-count">0</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="book-info">
+                    <h1>The Final Empire (The Mistborn Saga #1)</h1>
+                    <h2>Author: Brandon Sanderson</h2>
+                    <div class="book-description">
+                        <div class="book-card">
+                            <div class="description">
+                                <b>
+                                <i>What if the whole world were a dead, blasted wasteland?</i>
+                                </b>
+                                <br>
+                                <br>
+                                <b>Mistborn</b>
+                                <br>For a thousand years the ash fell and no flowers bloomed. For a thousand years the Skaa slaved in misery and lived in fear. For a thousand years the Lord Ruler, the "Sliver of Infinity," reigned with absolute power and ultimate terror, divinely invincible. Then, when hope was so long lost that not even its memory remained, a terribly scarred, heart-broken half-Skaa rediscovered it in the depths of the Lord Ruler's most hellish prison. Kelsier "snapped" and found in himself the powers of a Mistborn. A brilliant thief and natural leader, he turned his talents to the ultimate caper, with the Lord Ruler himself as the mark.
+                                <br>
+                                <br>Kelsier recruited the underworld's elite, the smartest and most trustworthy allomancers, each of whom shares one of his many powers, and all of whom relish a high-stakes challenge. Then Kelsier reveals his ultimate dream, not just the greatest heist in history, but the downfall of the divine despot.
+                                <br>
+                                <br>But even with the best criminal crew ever assembled, Kel's plan looks more like the ultimate long shot, until luck brings a ragged girl named Vin into his life. Like him, she's a half-Skaa orphan, but she's lived a much harsher life. Vin has learned to expect betrayal from everyone she meets. She will have to learn trust if Kel is to help her master powers of which she never dreamed.
+                                <br>
+                                <br>Brandon Sanderson, fantasy's newest master tale-spinner and author of the acclaimed debut 
+                                <i>Elantris</i>
+                                , dares to turn a genre on its head by asking a simple question: What if the prophesied hero failed to defeat the Dark Lord? The answer will be found in the Misborn Trilogy, a saga of surprises that begins with the book in your hands. Fantasy will never be the same again.
+                            </div>
+                            <a class="more"></a>
+                        </div>
+                        <script>
+                            Let more = document.querySelectorAll('.more');
+                            for (Let i = 0; i<more.length; i++) {
+                                more[i].addEventListener('click', function(){
+                                    more[i].parentNode.classList.toggle('active')
+                                })
+                            }
+                        </script>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="comment-section">
+                    <div class="post-comment">
+                        <div class="comment-list">
+                            <div class="flex">
+                                <div class="user">
+                                    <div class="user-image"><img src="{% static 'livrowebapp/img/profileicon.png' %}"></div>
+                                    <div class="user-meta">
+                                        <div class="name">Jumperman</div>
+                                        <div class="day">10 days ago</div>
+                                    </div>
+                                </div>
+                                <div class="reply">
+                                    <div class="re-comment">Reply</div>
+                                </div>
+                            </div>
+                            <div class="comment">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                            </div>
+                        </div>
+                        <form action="" class="comment-box">
+                            <div class="user">
+                                <div class="image"><img src="{% static 'livrowebapp/img/profileicon.png' %}"></div>
+                                <div class="name">Jumperman</div>
+                            </div>
+                            <textarea name="comment"></textarea>
+                            <button class="comment-submit">Comment</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="userbookshelf">
+                    <p> 
+                    <b>Browse Other Books</b>
+                    </p>
+                    <div class="books">
+                        <table>
+                            <tr>
+                            <th>  <a href="#"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a></th>
+                            <th>  <a href="#"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
+                            <th>  <a href="#"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
+                            <th>  <a href="#"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
+                            <th>  <a href="#"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
+                            <th>  <a href="#"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
+                            </tr>
+                            <tr>
+                            <td><p>Fantasy</p> </td>
+                            <td><p>Fantasy</p> </td>
+                            <td><p>Fantasy</p> </td>
+                            <td><p>Fantasy</p> </td>
+                            <td><p>Fantasy</p> </td>
+                            <td><p>Fantasy</p> </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    </body>
+</html>

@@ -21,3 +21,5 @@ def browse(request):
     return render(request, 'livrowebapp/browse.html')
 def manageprofile(request):
     return render(request, 'livrowebapp/manageprofile.html')
+def bookinformation(request):
+    return render(request, 'livrowebapp/bookinformation.html')
