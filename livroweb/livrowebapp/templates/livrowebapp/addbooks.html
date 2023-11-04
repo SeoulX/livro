@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link href="{% static 'livrowebapp/css/addbooks.css' %}" rel="stylesheet" />
+    <meta
+      name="viewport"
+      content="width=device-width, height=device-height, initial-scale=1.0"
+    />
+    <title>livro</title>
+  </head>
+
+  <body>
+    <div class="navbar" id="myNavbar">
+      <div class="logo">
+        <a href="#"
+          ><img src="{% static 'livrowebapp/img/logo.png' %}" width="100"
+        /></a>
+      </div>
+
+      <div class="navbarRight">
+        <tr>
+          <a button class="upload" href="#">UPLOAD</a>
+        </tr>
+      </div>
+    </div>
+    <div class="addbooks">
+      <div class="book-cover">
+        <tr>
+          <th>
+            <a href="#">
+              <img
+                class="upload-cover"
+                src="{% static 'livrowebapp/img/Ellipse3.png' %}"
+            /></a>
+          </th>
+          <th>
+            <p><b>Book Cover</b></p>
+          </th>
+        </tr>
+        <p><b>Author</b></p>
+        <input type="text" name="authorbox" />
+        <p><b>Genre</b></p>
+        <input type="text" name="genrebox" />
+        <p><b>Access Link</b></p>
+        <input type="text" name="accesslink" />
+
+        <div class="description">
+          <p><b>Description</b></p>
+          <input type="description" name="authorbox" />
+        </div>
+      </div>
+    </div>
+    <div class="note">
+    <p><b>Note: Uploading and verification of the Book may take 2 to 3 days.<b></p>
+  </body>
+</html>
