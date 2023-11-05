@@ -12,6 +12,7 @@ urlpatterns = [
     path('addbooks/', views.addbooks),
     path('browse/', views.browse),
     path('manageprofile/', views.manageprofile),
+    path('manageprofile_writer/', views.manageprofile_writer),
     path('profile_writer/', views.profile_writer),
     path('bookinformation/', views.bookinformation),
     path('browse_reader/', views.browse_reader),
