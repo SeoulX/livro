@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link href="{% static 'livrowebapp/css/profile.css' %}" rel="stylesheet" />
+    <link href="{% static 'livrowebapp/css/profile_writer.css' %}" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0" />
     <title>livro</title>
   </head>
@@ -39,8 +39,12 @@
 
                 <p> <b>About user: </b> <br>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-
            </div>
+
+           <div class ="addbutton">
+            <a button class="addbook" href="/addbooks/">Upload Book</a>
+           </div>
+           
 
            <div class="userbookshelf">
 
@@ -70,8 +74,11 @@
             </div>
 
            </div>
+
+           
           
     </div>
+
   </div>
     
     <script src="{% static 'livrowebapp/js/profile.js' %}"></script>
