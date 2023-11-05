@@ -24,13 +24,18 @@ a{display: inline-block;}
       
 }
 
+.navbarRight img{
+    position: relative;
+    width: 40px;
+    margin-bottom: -10PX;
+}
+
 .logo img {
  width: auto;
  height: 50px;
 
 }
  
-
 
 .navbarRight a{
     text-decoration: none;
@@ -39,7 +44,6 @@ a{display: inline-block;}
     font-size: 20px;
     font-weight: bold;
     margin-right: 40px;
-    margin-top: 5px;
  
 }
 /* NAVBAR END!! */

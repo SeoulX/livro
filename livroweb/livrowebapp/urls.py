@@ -14,4 +14,6 @@ urlpatterns = [
     path('manageprofile/', views.manageprofile),
     path('profile_writer/', views.profile_writer),
     path('bookinformation/', views.bookinformation),
+    path('browse_reader/', views.browse_reader),
+    path('browse_writer/', views.browse_writer),
 ]

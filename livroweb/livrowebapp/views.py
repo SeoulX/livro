@@ -25,3 +25,7 @@ def profile_writer(request):
     return render(request, 'livrowebapp/profile_writer.html')
 def bookinformation(request):
     return render(request, 'livrowebapp/bookinformation.html')
+def browse_reader(request):
+    return render(request, 'livrowebapp/browse_reader.html')
+def browse_writer(request):
+    return render(request, 'livrowebapp/browse_writer.html')

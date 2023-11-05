@@ -3,7 +3,6 @@ body {
     
     font-family: Tahoma;
     margin: 0px;
-   
     min-height: 100% 
 }
 
@@ -38,12 +37,14 @@ a{display: inline-block;}
 }
 
 .navbarRight{
-    margin-top: -10PX;
+    margin-top: 0PX;
+
 }
 
 .navbarRight img{
-
+    
     margin-bottom: -10PX;
+    width: 40px;
 }
 .navbarRight a{
     text-decoration: none;
@@ -54,10 +55,7 @@ a{display: inline-block;}
     margin-right: 40px;
  
 }
-.profileicon{
-    position: relative;
-    width: 40px;
-}
+
 /* NAVBAR END!! */
 
 
@@ -68,6 +66,7 @@ a{display: inline-block;}
     margin-top: 3%;
     float: right;
     width: 50%;
+    margin-left: 0%;
     padding: 50px;
     background-color: #FFFFFF;
     max-width: 800px;
@@ -113,6 +112,7 @@ a{display: inline-block;}
     padding: 50px;
     background-color: #FFFFFF;
     max-width: 300px;
+    margin-left: 0%;
     border-radius: 20px;
     box-shadow: inset 0px 0px 2px 0px rgba(0, 0, 0, 0.8);
 }

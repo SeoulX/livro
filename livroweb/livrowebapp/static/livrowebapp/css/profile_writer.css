@@ -9,6 +9,9 @@ body {
 
 a{display: inline-block;}
 
+.profilebottomLeft{
+    flex-direction: column;
+}
 .profilebottom{
     display: flex;
     flex-direction: row;
@@ -38,7 +41,8 @@ a{display: inline-block;}
 }
 
 .navbarRight{
-    margin-top: -10PX;
+    margin-top: 0PX;
+
 }
 
 .navbarRight img{
@@ -106,10 +110,11 @@ a{display: inline-block;}
 /* BOOKSHELF END!! */
 
 
+
 /* ABOUT USER START */
 .aboutuser{
     margin: auto;
-    margin-top: 3%;
+    margin-top: 10.2%;
     padding: 50px;
     background-color: #FFFFFF;
     max-width: 300px;
@@ -162,6 +167,9 @@ color: #FFFFFF;
 background-color: #76377b;
 border-radius: 10px;
 font-weight: bold;
+margin-top: 10px;
+margin-left: 10px;
+
 }
 
 
