@@ -8,16 +8,42 @@ body {
     display: flex;
     flex-direction: column; /* Make the body a flex container */
 }
-
-/* Navbar styles */
+a{display: inline-block;}
+/* NAVBAR START */
 .navbar {
+    max-width:100vw;
     background-color: #e3ecfc;
     overflow: hidden;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 5%;
+    padding: 9px;
+    position: sticky;
+    top: 0px;
+    box-shadow: 0 2px 15px 0 rgba(0,0,0,.2);
+      
 }
+
+.logo img {
+ width: auto;
+ height: 50px;
+
+}
+ 
+
+
+.nav{
+    text-decoration: none;
+    color: #333333;
+    font-family: tahoma;
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 40px;
+    margin-top: 5px;
+ 
+}
+/* NAVBAR END!! */
+
 
 /* Container styles */
 .container-body {
@@ -27,7 +53,7 @@ body {
 }
 
 /* Logo styles */
-.logo, .logo1 {
+ .logo1 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,10 +61,7 @@ body {
 }
 
 /* Increase the logo size */
-.logo img{
-    max-width: 100%; /* Ensure the logo scales properly */
-    height: auto;
-}
+
 .logo1 {
     display: flex;
     justify-content: center;

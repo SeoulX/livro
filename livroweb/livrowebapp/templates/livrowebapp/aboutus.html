@@ -7,16 +7,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>livro</title>
   </head>
-    <div class="navigation">
-      <img src="{% static 'livrowebapp/img/logo.png' %}" alt="Logo" width="100"/>
-      <div class="buttons">
-        <a button class="home" href="/browse/">Home</a>
-        <a button class="abtus" href="/aboutus/">About Us</a>
-        <a button class="login" href="/signin/">Login</a>
-        <a button class="signup" href="/signup/">Sign Up</a>
-      </div>
+ 
+  <div class="navbar" id="myNavbar">
+    <div class="logo">
+      <a href="/browse/"><img src="{% static 'livrowebapp/img/logo.png' %}" width="100"/></a>
+    </div>
+    <div class="navbarRight">        
+      <tr>
+          <th> <a class="nav" href="/browse/"> Home</a> </th>
+          <th> <a class="nav" href="/aboutus/"> About Us </a> </th>
+          <th>  <a class="nav" href="/signin/"> Login</a></th>
+          <th>  <a class="nav" href="/signup/"> Sign Up</a> </th>
+        </tr>        
     </div>
   </div>
+
+
+<div>
   <div class="aboutus">
     <h1>About Us</h1>
   </div>
@@ -29,8 +36,8 @@
           better understand ourselves and the world around us. We are committed to providing a wide selection 
           of novels to meet the needs of all readers.</p>
       </div>
-    </div>
   </div>
+
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-copyright">
