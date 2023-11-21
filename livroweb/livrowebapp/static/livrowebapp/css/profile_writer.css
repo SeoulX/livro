@@ -1,13 +1,4 @@
-/* Global styles */
-body {
-    
-    font-family: Tahoma;
-    margin: 0px;
-   
-    min-height: 100% 
-}
 
-a{display: inline-block;}
 
 .profilebottomLeft{
     flex-direction: column;
@@ -18,51 +9,6 @@ a{display: inline-block;}
     width: 1366px; margin: 0 auto; overflow: hidden;
     height: 100%;
 }
-
-/* NAVBAR START */
-.navbar {
-  
-    background-color: #e3ecfc;
-    overflow: hidden;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 9px;
-    position: sticky;
-    top: 0px;
-    box-shadow: 0 2px 15px 0 rgba(0,0,0,.2);
-      
-}
-
-.logo img {
- width: auto;
- height: 50px;
-
-}
-
-.navbarRight{
-    margin-top: 0PX;
-
-}
-
-.navbarRight img{
-
-    margin-bottom: -10PX;
-}
-.navbarRight a{
-    text-decoration: none;
-    color: #333333;
-    font-family: tahoma;
-    font-size: 20px;
-    font-weight: bold;
-    margin-right: 40px;
- 
-}
-.profileicon{
-    position: relative;
-    width: 40px;
-}
-/* NAVBAR END!! */
 
 
 

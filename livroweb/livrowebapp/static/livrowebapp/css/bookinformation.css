@@ -1,12 +1,5 @@
 /* Global styles */
-body {
-    
-    font-family: Tahoma;
-    margin: 0px;
-    min-height: 100% 
-}
 
-a{display: inline-block;}
 
 .profilebottom{
     display: flex;
@@ -15,52 +8,10 @@ a{display: inline-block;}
     height: 100%;
 }
 
-/* NAVBAR START */
-.navbar {
-  
-    background-color: #e3ecfc;
-    overflow: hidden;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 9px;
-    position: sticky;
-    top: 0px;
-    box-shadow: 0 2px 15px 0 rgba(0,0,0,.2);
-      
-}
-
-.logo img {
- width: auto;
- height: 50px;
-
-}
-
-.navbarRight{
-    margin-top: 13px
-
-}
-
-.navbarRight img{
-    margin-top: -4px;
-    width: 40px;
-}
-.navbarRight a{
-    text-decoration: none;
-    color: #333333;
-    font-family: tahoma;
-    font-size: 20px;
-    font-weight: bold;
-    margin-right: 40px;
-
- 
-}
-
-/* NAVBAR END!! */
 
 
 .main-content {
-position: absolute;
+position: flex;
 left: 0;
 right: 0;
 z-index: 7;
@@ -154,7 +105,7 @@ overflow: clip;
 
 #book-info{
     text-align: left;
-    position: relative;
+    position: flex;
     min-height: 1px;
     padding-left: 15px;
     padding-right: 15px;
@@ -164,14 +115,14 @@ overflow: clip;
 }
 
 .book-description .book-card .description {
-    position: relative;
+    position: flex;
     height: 210px;
     overflow: hidden;
 }
 
 .book-description .book-card .description::before {
     content: '';
-    position: absolute;
+    position: flex;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -357,11 +308,3 @@ overflow: clip;
 }
 /*Other Books End*/
 
-@media
-(prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
-    max-width: 100%;
- overflow-x: hidden;
-  }
-}

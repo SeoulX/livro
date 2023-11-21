@@ -1,200 +1,299 @@
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link href="{% static 'livrowebapp/css/browse_reader.css' %}" rel="stylesheet" />
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0" />
-    <title>livro</title>
-  </head>
+{% include 'livrowebapp/home.html' %}
 
-<body>
-  <div class="navbar" id="myNavbar">
-      <div class="logo">
-        <a href="/browse_reader/"><img src="{% static 'livrowebapp/img/logo.png' %}" width="100"/></a>
-      </div>
+{% block content %}
 
-      <div class="navbarRight">        
-        <tr>
-            <th> <a href="/browse_reader/"> Home</a> </th>
-            <th> <a href="/aboutus/"> About Us </a> </th>
-            <th>  <a href="/browse/"> Logout</a> </th>
-            <th>  <a href="/profile/"> <img class="profileicon" src="{% static 'livrowebapp/img/profileicon.png' %}"></a> </th>
-          </tr>
-               
-    </div>
-  </div>
+<link href="{% static 'livrowebapp/css/browse_reader.css' %}" rel="stylesheet" />
 
-<div class="content" >
-    <div class="searchbg"> 
+<div class="content">
+    <div class="searchbg">
         <div class="search-box">
             <button><img src="{% static 'livrowebapp/img/search48px.png' %}"></button>
             <input type="text" placeholder="Search books...">
         </div>
         <div class="filters">
-          
-                <button type="button" class="genre-button" value="Action">Action</button>
-                <button type="button" class="genre-button" value="Fantasy">Fantasy</button>
-                <button type="button" class="genre-button" value="Young Adult">Young Adult</button>
-                <button type="button" class="genre-button" value="Comedy">Comedy</button>
-                <button type="button" class="genre-button" value="Romance">Romance</button>
-                <button type="button" class="genre-button" value="NonFiction">NonFiction</button>
-                <button type="button" class="genre-button" value="Science Fiction">Science Fiction</button>
-                <button type="button" class="genre-button" value="Horror">Horror</button>
-         
-        </div>          
+
+            <button type="button" class="genre-button" value="Action">Action</button>
+            <button type="button" class="genre-button" value="Fantasy">Fantasy</button>
+            <button type="button" class="genre-button" value="Young Adult">Young Adult</button>
+            <button type="button" class="genre-button" value="Comedy">Comedy</button>
+            <button type="button" class="genre-button" value="Romance">Romance</button>
+            <button type="button" class="genre-button" value="NonFiction">NonFiction</button>
+            <button type="button" class="genre-button" value="Science Fiction">Science Fiction</button>
+            <button type="button" class="genre-button" value="Horror">Horror</button>
+
+        </div>
     </div>
 
     <div class="browsebottom">
         <div class="genrebox">
             <p><b>Recently opened</b></p>
             <div class="books">
-            <table>
-                <tr>
-                    <th>  <a href="/bookinformation/"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a></th>
-                    <th>  <a href="/bookinformation/"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a></th>
-                    <th>  <a href="/bookinformation/"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a></th>
-                    <th>  <a href="/bookinformation/"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a></th>
-                    <th>  <a href="/bookinformation/"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a></th>
-                    <th>  <a href="/bookinformation/"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a></th>
-                    <th>  <a href="/bookinformation/"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a></th>
-                    <th>  <a href="/bookinformation/"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a></th>
-                </tr>
-                <tr>
-                    <td><p>Fantasy</p> </td>
-                    <td><p>Fantasy</p> </td>
-                    <td><p>Fantasy</p> </td>
-                    <td><p>Fantasy</p> </td>
-                    <td><p>Fantasy</p> </td>
-                    <td><p>Fantasy</p> </td>
-                    <td><p>Fantasy</p> </td>
-                    <td><p>Fantasy</p> </td>
-                </tr>
-                <tr>
-            </table>
+                <table>
+                    <tr>
+                        <th> <a href="/bookinformation/"> <img class="profileicon"
+                                    src="{% static 'livrowebapp/img/book1.png' %}"></a></th>
+                        <th> <a href="/bookinformation/"> <img class="profileicon"
+                                    src="{% static 'livrowebapp/img/book1.png' %}"></a></th>
+                        <th> <a href="/bookinformation/"> <img class="profileicon"
+                                    src="{% static 'livrowebapp/img/book1.png' %}"></a></th>
+                        <th> <a href="/bookinformation/"> <img class="profileicon"
+                                    src="{% static 'livrowebapp/img/book1.png' %}"></a></th>
+                        <th> <a href="/bookinformation/"> <img class="profileicon"
+                                    src="{% static 'livrowebapp/img/book1.png' %}"></a></th>
+                        <th> <a href="/bookinformation/"> <img class="profileicon"
+                                    src="{% static 'livrowebapp/img/book1.png' %}"></a></th>
+                        <th> <a href="/bookinformation/"> <img class="profileicon"
+                                    src="{% static 'livrowebapp/img/book1.png' %}"></a></th>
+                        <th> <a href="/bookinformation/"> <img class="profileicon"
+                                    src="{% static 'livrowebapp/img/book1.png' %}"></a></th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Fantasy</p>
+                        </td>
+                        <td>
+                            <p>Fantasy</p>
+                        </td>
+                        <td>
+                            <p>Fantasy</p>
+                        </td>
+                        <td>
+                            <p>Fantasy</p>
+                        </td>
+                        <td>
+                            <p>Fantasy</p>
+                        </td>
+                        <td>
+                            <p>Fantasy</p>
+                        </td>
+                        <td>
+                            <p>Fantasy</p>
+                        </td>
+                        <td>
+                            <p>Fantasy</p>
+                        </td>
+                    </tr>
+                    <tr>
+                </table>
             </div>
         </div>
 
-    <div class="browsebottom">
-        <div class="genrebox">
-            <p><b>Top 10 trending books</b></p>
-            <div class="books">
-            <table>
-                <tr>
-                    <th>  <a href="#"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a></th>
-                    <th>  <a href="#"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
-                    <th>  <a href="#"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
-                    <th>  <a href="#"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
-                    <th>  <a href="#"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
-                    <th>  <a href="#"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
-                    <th>  <a href="#"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
-                    <th>  <a href="#"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
-                </tr>
-                <tr>
-                    <td><p>Fantasy</p> </td>
-                    <td><p>Fantasy</p> </td>
-                    <td><p>Fantasy</p> </td>
-                    <td><p>Fantasy</p> </td>
-                    <td><p>Fantasy</p> </td>
-                    <td><p>Fantasy</p> </td>
-                    <td><p>Fantasy</p> </td>
-                    <td><p>Fantasy</p> </td>
-                </tr>
-                <tr>
-            </table>
+        <div class="browsebottom">
+            <div class="genrebox">
+                <p><b>Top 10 trending books</b></p>
+                <div class="books">
+                    <table>
+                        <tr>
+                            <th> <a href="#"> <img class="profileicon"
+                                        src="{% static 'livrowebapp/img/book1.png' %}"></a></th>
+                            <th> <a href="#"> <img class="profileicon"
+                                        src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
+                            <th> <a href="#"> <img class="profileicon"
+                                        src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
+                            <th> <a href="#"> <img class="profileicon"
+                                        src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
+                            <th> <a href="#"> <img class="profileicon"
+                                        src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
+                            <th> <a href="#"> <img class="profileicon"
+                                        src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
+                            <th> <a href="#"> <img class="profileicon"
+                                        src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
+                            <th> <a href="#"> <img class="profileicon"
+                                        src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Fantasy</p>
+                            </td>
+                            <td>
+                                <p>Fantasy</p>
+                            </td>
+                            <td>
+                                <p>Fantasy</p>
+                            </td>
+                            <td>
+                                <p>Fantasy</p>
+                            </td>
+                            <td>
+                                <p>Fantasy</p>
+                            </td>
+                            <td>
+                                <p>Fantasy</p>
+                            </td>
+                            <td>
+                                <p>Fantasy</p>
+                            </td>
+                            <td>
+                                <p>Fantasy</p>
+                            </td>
+                        </tr>
+                        <tr>
+                    </table>
+                </div>
             </div>
-        </div>
 
-        <div class="genrebox">
-          <p><b>Top 10 Fantasy</b></p>
-          <div class="books">
-          <table>
-              <tr>
-                  <th>  <a href="#"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a></th>
-                  <th>  <a href="#"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
-                  <th>  <a href="#"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
-                  <th>  <a href="#"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
-                  <th>  <a href="#"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
-                  <th>  <a href="#"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
-                  <th>  <a href="#"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
-                  <th>  <a href="#"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
-              </tr>
-              <tr>
-                  <td><p>Fantasy</p> </td>
-                  <td><p>Fantasy</p> </td>
-                  <td><p>Fantasy</p> </td>
-                  <td><p>Fantasy</p> </td>
-                  <td><p>Fantasy</p> </td>
-                  <td><p>Fantasy</p> </td>
-                  <td><p>Fantasy</p> </td>
-                  <td><p>Fantasy</p> </td>
-              </tr>
-              <tr>
-          </table>
-          </div>
-      </div>
+            <div class="genrebox">
+                <p><b>Top 10 Fantasy</b></p>
+                <div class="books">
+                    <table>
+                        <tr>
+                            <th> <a href="#"> <img class="profileicon"
+                                        src="{% static 'livrowebapp/img/book1.png' %}"></a></th>
+                            <th> <a href="#"> <img class="profileicon"
+                                        src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
+                            <th> <a href="#"> <img class="profileicon"
+                                        src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
+                            <th> <a href="#"> <img class="profileicon"
+                                        src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
+                            <th> <a href="#"> <img class="profileicon"
+                                        src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
+                            <th> <a href="#"> <img class="profileicon"
+                                        src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
+                            <th> <a href="#"> <img class="profileicon"
+                                        src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
+                            <th> <a href="#"> <img class="profileicon"
+                                        src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Fantasy</p>
+                            </td>
+                            <td>
+                                <p>Fantasy</p>
+                            </td>
+                            <td>
+                                <p>Fantasy</p>
+                            </td>
+                            <td>
+                                <p>Fantasy</p>
+                            </td>
+                            <td>
+                                <p>Fantasy</p>
+                            </td>
+                            <td>
+                                <p>Fantasy</p>
+                            </td>
+                            <td>
+                                <p>Fantasy</p>
+                            </td>
+                            <td>
+                                <p>Fantasy</p>
+                            </td>
+                        </tr>
+                        <tr>
+                    </table>
+                </div>
+            </div>
 
-      <div class="genrebox">
-        <p><b>Top 10 Non-Fiction</b></p>
-        <div class="books">
-        <table>
-            <tr>
-                <th>  <a href="#"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a></th>
-                <th>  <a href="#"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
-                <th>  <a href="#"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
-                <th>  <a href="#"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
-                <th>  <a href="#"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
-                <th>  <a href="#"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
-                <th>  <a href="#"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
-                <th>  <a href="#"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
-            </tr>
-            <tr>
-                <td><p>Fantasy</p> </td>
-                <td><p>Fantasy</p> </td>
-                <td><p>Fantasy</p> </td>
-                <td><p>Fantasy</p> </td>
-                <td><p>Fantasy</p> </td>
-                <td><p>Fantasy</p> </td>
-                <td><p>Fantasy</p> </td>
-                <td><p>Fantasy</p> </td>
-            </tr>
-            <tr>
-        </table>
+            <div class="genrebox">
+                <p><b>Top 10 Non-Fiction</b></p>
+                <div class="books">
+                    <table>
+                        <tr>
+                            <th> <a href="#"> <img class="profileicon"
+                                        src="{% static 'livrowebapp/img/book1.png' %}"></a></th>
+                            <th> <a href="#"> <img class="profileicon"
+                                        src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
+                            <th> <a href="#"> <img class="profileicon"
+                                        src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
+                            <th> <a href="#"> <img class="profileicon"
+                                        src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
+                            <th> <a href="#"> <img class="profileicon"
+                                        src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
+                            <th> <a href="#"> <img class="profileicon"
+                                        src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
+                            <th> <a href="#"> <img class="profileicon"
+                                        src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
+                            <th> <a href="#"> <img class="profileicon"
+                                        src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Fantasy</p>
+                            </td>
+                            <td>
+                                <p>Fantasy</p>
+                            </td>
+                            <td>
+                                <p>Fantasy</p>
+                            </td>
+                            <td>
+                                <p>Fantasy</p>
+                            </td>
+                            <td>
+                                <p>Fantasy</p>
+                            </td>
+                            <td>
+                                <p>Fantasy</p>
+                            </td>
+                            <td>
+                                <p>Fantasy</p>
+                            </td>
+                            <td>
+                                <p>Fantasy</p>
+                            </td>
+                        </tr>
+                        <tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="genrebox">
+                <p><b>Top 10 Young Adult</b></p>
+                <div class="books">
+                    <table>
+                        <tr>
+                            <th> <a href="#"> <img class="profileicon"
+                                        src="{% static 'livrowebapp/img/book1.png' %}"></a></th>
+                            <th> <a href="#"> <img class="profileicon"
+                                        src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
+                            <th> <a href="#"> <img class="profileicon"
+                                        src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
+                            <th> <a href="#"> <img class="profileicon"
+                                        src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
+                            <th> <a href="#"> <img class="profileicon"
+                                        src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
+                            <th> <a href="#"> <img class="profileicon"
+                                        src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
+                            <th> <a href="#"> <img class="profileicon"
+                                        src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
+                            <th> <a href="#"> <img class="profileicon"
+                                        src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Fantasy</p>
+                            </td>
+                            <td>
+                                <p>Fantasy</p>
+                            </td>
+                            <td>
+                                <p>Fantasy</p>
+                            </td>
+                            <td>
+                                <p>Fantasy</p>
+                            </td>
+                            <td>
+                                <p>Fantasy</p>
+                            </td>
+                            <td>
+                                <p>Fantasy</p>
+                            </td>
+                            <td>
+                                <p>Fantasy</p>
+                            </td>
+                            <td>
+                                <p>Fantasy</p>
+                            </td>
+                        </tr>
+                        <tr>
+                    </table>
+                </div>
+            </div>
+
         </div>
     </div>
 
-    <div class="genrebox">
-      <p><b>Top 10 Young Adult</b></p>
-      <div class="books">
-      <table>
-          <tr>
-              <th>  <a href="#"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a></th>
-              <th>  <a href="#"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
-              <th>  <a href="#"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
-              <th>  <a href="#"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
-              <th>  <a href="#"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
-              <th>  <a href="#"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
-              <th>  <a href="#"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
-              <th>  <a href="#"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
-          </tr>
-          <tr>
-              <td><p>Fantasy</p> </td>
-              <td><p>Fantasy</p> </td>
-              <td><p>Fantasy</p> </td>
-              <td><p>Fantasy</p> </td>
-              <td><p>Fantasy</p> </td>
-              <td><p>Fantasy</p> </td>
-              <td><p>Fantasy</p> </td>
-              <td><p>Fantasy</p> </td>
-          </tr>
-          <tr>
-      </table>
-      </div>
-  </div>
-
-    </div>
-  </div>
-    
     <script src="{% static 'livrowebapp/js/browse.js' %}"></script>
-  </body>
-</html>
+    {% endblock %}

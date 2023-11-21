@@ -1,6 +1,7 @@
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
+{% include 'livrowebapp/home.html' %}
+
+{% block content %}
   <head>
     <meta charset="UTF-8" />
     <link href="{% static 'livrowebapp/css/bookinformation.css' %}" rel="stylesheet" />
@@ -11,21 +12,6 @@
   </head>
 
   <body>
-    <div class="navbar" id="myNavbar">
-      <div class="logo">
-        <a href="/browse_reader/"><img src="{% static 'livrowebapp/img/logo.png' %}" width="100"/></a>
-      </div>
-
-      <div class="navbarRight">        
-        <tr>
-            <th> <a href="/browse_reader/"> Home</a> </th>
-            <th> <a href="/aboutus/"> About Us </a> </th>
-            <th>  <a href="/browse/"> Logout</a> </th>
-            <th>  <a href="/profile/"> <img class="profileicon" src="{% static 'livrowebapp/img/profileicon.png' %}"></a> </th>
-          </tr>
-               
-        </div>
-    </div>
 
     <div class="main-content">
         <div class="container" id="book-content">
@@ -140,5 +126,4 @@
     </div>
 
 
-    </body>
-</html>
+    {% endblock %}

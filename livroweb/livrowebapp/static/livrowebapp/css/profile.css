@@ -1,12 +1,3 @@
-/* Global styles */
-body {
-    
-    font-family: Tahoma;
-    margin: 0px;
-    min-height: 100% 
-}
-
-a{display: inline-block;}
 
 .profilebottom{
     display: flex;
@@ -15,48 +6,7 @@ a{display: inline-block;}
     height: 100%;
 }
 
-/* NAVBAR START */
-.navbar {
-  
-    background-color: #e3ecfc;
-    overflow: hidden;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 9px;
-    position: sticky;
-    top: 0px;
-    box-shadow: 0 2px 15px 0 rgba(0,0,0,.2);
-      
-}
 
-.logo img {
- width: auto;
- height: 50px;
-
-}
-
-.navbarRight{
-    margin-top: 0PX;
-
-}
-
-.navbarRight img{
-    
-    margin-bottom: -10PX;
-    width: 40px;
-}
-.navbarRight a{
-    text-decoration: none;
-    color: #333333;
-    font-family: tahoma;
-    font-size: 20px;
-    font-weight: bold;
-    margin-right: 40px;
- 
-}
-
-/* NAVBAR END!! */
 
 
 
@@ -154,14 +104,3 @@ border-radius: 10px;
 font-weight: bold;
 }
 
-
-@media
-(prefers-reduced-motion: no-preference) {
-  html {
-    background-color: #f2f7ff;
-    scroll-behavior: smooth;
-    max-width: 100%;
-    overflow-x: hidden;
-   height: 100%;
-  }
-}
