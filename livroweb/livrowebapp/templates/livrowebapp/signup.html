@@ -13,7 +13,8 @@
     </div>
     <div class="popup">
         <div class="close-btn">&times;</div>
-        <form action="/readwrite/" method="post">  <!-- Specify your action and method here -->
+        <form action="{% url 'signup' %}" method="POST"> <!-- Specify your action and method here -->
+        {% csrf_token %}
             <div class="form">
                 <div class="logo1">
                     <a href="#">

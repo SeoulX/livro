@@ -4,8 +4,6 @@ from django.views.decorators.csrf import csrf_protect
 
 def land(request):
     return render(request, 'livrowebapp/landing.html')
-
-@csrf_protect
 def signin(request):
     return render(request, 'livrowebapp/signin.html')
 def signup(request):
