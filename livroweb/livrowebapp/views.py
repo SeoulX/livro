@@ -1,8 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .models import Member
+from django.views.decorators.csrf import csrf_protect
 
-# Create your views here.
 def land(request):
     return render(request, 'livrowebapp/landing.html')
+
+@csrf_protect
 def signin(request):
     return render(request, 'livrowebapp/signin.html')
 def signup(request):

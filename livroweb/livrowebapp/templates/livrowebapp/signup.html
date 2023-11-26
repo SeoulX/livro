@@ -1,64 +1,97 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <link href="{% static 'livrowebapp/css/signup.css' %}" rel="stylesheet" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>livro</title>
-    </head>
-    <body>
-        <div class="center">
-            <button id="show-login">Login</button>
-        </div>
-        <div class="popup">
-            <div class="close-btn">&times;</div>
+<head>
+    <meta charset="UTF-8" />
+    <link href="{% static 'livrowebapp/css/signup.css' %}" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>livro</title>
+</head>
+<body>
+    <div class="center">
+        <button id="show-login">Login</button>
+    </div>
+    <div class="popup">
+        <div class="close-btn">&times;</div>
+        <form action="/readwrite/" method="post">  <!-- Specify your action and method here -->
             <div class="form">
                 <div class="logo1">
                     <a href="#">
-                      <img
+                        <img
                         src="{% static 'livrowebapp/img/logo.png' %}"
                         alt="Logo"
                         width="150"
-                      />
+                        />
                     </a>
                 </div>
                 <h2>Create Account</h2>
                 <hr></hr>
+                <!-- Your form elements here -->
                 <div class ="form-element">
                     <label for="username">Username</label>
                 </div>
                 <div class ="form-element">
-                    <input type="text" id="username">
+                    <input type="text" id="username" name="username">
+                </div>
+                <div class ="form-element">
+                    <label for="username">Username</label>
+                </div>
+                <div class ="form-element">
+                    <input type="text" id="username" name="username">
                 </div>
                 <div class ="form-element">
                     <label for="email">Email</label>
                 </div>
                 <div class ="form-element">
-                    <input type="text" id="email">
+                    <input type="text" id="email" name="email">
                 </div>
                 <div class ="form-element">
                     <label for="password">Password</label>
                     <label for="confirmpassword">Confirm Password</label>
                 </div>
                 <div class ="form-element">
-                    <input type="password" id="password">
+                    <input type="password" id="password" name="password">
                     <input type="password" id="confirmpassword">
                 </div>
                 <div class="form-element">
                     <input type="checkbox" id="showpassword">
                     <label for="showpassword">Show Password</label>
-                    <input type="checkbox" id="confirmpasswordshowpassword">
-                    <label for="showconfirmpassword">Show Confirm Password</label>
                 </div>
+                <!-- ... other form elements ... -->
+
+                <!-- Role selection -->
                 <div class="form-element">
-                    <button onclick="window.location.href='/readwrite/'">Create Account</button>
+                    <label for="role">Please select your role:</label>
+                    <br/>
+                    <div style="display: flex; align-items: flex-start; justify-content: center;">
+                        <div style="text-align: center; margin-right: 100px;">
+                            <img src="{% static 'livrowebapp/img/reader.png' %}" alt="Image" width="75px">
+                            <br/>
+                            <input type="radio" id="reader" name="role" value="reader" style="margin-top: 5px;" />
+                            <label for="reader">Reader</label>
+                        </div>
+                        <div style="text-align: center;">
+                            <img src="{% static 'livrowebapp/img/writer.png' %}" alt="Image" width="75px">
+                            <br/>
+                            <input type="radio" id="writer" name="role" value="writer" style="margin-top: 5px;" />
+                            <label for="writer">Writer</label>
+                        </div>
+                    </div>
                 </div>
+                <!-- ... other form elements ... -->
+
+                <!-- Submit button -->
+                <div class="form-element">
+                    <button type="submit">Create Account</button>
+                </div>
+
+                <!-- Sign in link -->
                 <div class="form-element">
                     <label for="account">Already have an account?</label>
                     <a href="/signin/">Sign In</a>
                 </div>
             </div>
-        </div>
-    </body>
-<html>
+        </form>
+    </div>
+</body>
+</html>
