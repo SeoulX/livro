@@ -28,12 +28,7 @@
                 <h2>Create Account</h2>
                 <hr></hr>
                 <!-- Your form elements here -->
-                <div class ="form-element">
-                    <label for="username">Username</label>
-                </div>
-                <div class ="form-element">
-                    <input type="text" id="username" name="username">
-                </div>
+                {{ form.as_p }}
                 <div class ="form-element">
                     <label for="username">Username</label>
                 </div>
@@ -58,8 +53,6 @@
                     <input type="checkbox" id="showpassword">
                     <label for="showpassword">Show Password</label>
                 </div>
-                <!-- ... other form elements ... -->
-
                 <!-- Role selection -->
                 <div class="form-element">
                     <label for="role">Please select your role:</label>
@@ -68,13 +61,13 @@
                         <div style="text-align: center; margin-right: 100px;">
                             <img src="{% static 'livrowebapp/img/reader.png' %}" alt="Image" width="75px">
                             <br/>
-                            <input type="radio" id="reader" name="role" value="reader" style="margin-top: 5px;" />
+                            <input type="radio" id="reader" name="type_user" value="Reader" style="margin-top: 5px;" />
                             <label for="reader">Reader</label>
                         </div>
                         <div style="text-align: center;">
                             <img src="{% static 'livrowebapp/img/writer.png' %}" alt="Image" width="75px">
                             <br/>
-                            <input type="radio" id="writer" name="role" value="writer" style="margin-top: 5px;" />
+                            <input type="radio" id="writer" name="type_user" value="Writer" style="margin-top: 5px;" />
                             <label for="writer">Writer</label>
                         </div>
                     </div>

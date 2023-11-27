@@ -1,13 +1,25 @@
 from django.shortcuts import render, redirect
 from .models import Member
-from django.views.decorators.csrf import csrf_protect
+from .forms import Memberform
+from django.contrib import messages
 
 def land(request):
     return render(request, 'livrowebapp/landing.html')
 def signin(request):
     return render(request, 'livrowebapp/signin.html')
 def signup(request):
-    return render(request, 'livrowebapp/signup.html')
+    if request.method == "POST":
+        form = Memberform(request.POST or None)
+        if form.is_valid():
+            member = form.save()
+            if member.type_user == 'Reader':
+                messages.success(request, ('Thanks for Signing Up!'))
+                return redirect('browse_reader')
+            elif member.type_user == 'Writer':
+                messages.success(request, ('Thanks for Signing Up!'))
+                return redirect('browse_writer')
+    else:    
+        return render(request, 'livrowebapp/signup.html')
 def aboutus(request):
     return render(request, 'livrowebapp/aboutus.html')
 def readwrite(request):
