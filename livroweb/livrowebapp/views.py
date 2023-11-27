@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Member
 from .forms import Memberform
+from django.contrib import messages
 
 def land(request):
     return render(request, 'livrowebapp/landing.html')
@@ -10,8 +11,13 @@ def signup(request):
     if request.method == "POST":
         form = Memberform(request.POST or None)
         if form.is_valid():
-            form.save()
-        return render(request, 'livrowebapp/signup.html')
+            member = form.save()
+            if member.type_user == 'Reader':
+                messages.success(request, ('Thanks for Signing Up!'))
+                return redirect('browse_reader')
+            elif member.type_user == 'Writer':
+                messages.success(request, ('Thanks for Signing Up!'))
+                return redirect('browse_writer')
     else:    
         return render(request, 'livrowebapp/signup.html')
 def aboutus(request):

@@ -6,6 +6,15 @@
 <link href="{% static 'livrowebapp/css/browse_reader.css' %}" rel="stylesheet" />
 
 <div class="content">
+    {% if messages %}
+        {% for message in messages%}
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                {{ message }}
+                <strong><a href="/#/"> See How to Use Livro </a></strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endfor %}
+    {% endif%}
     <div class="searchbg">
         <div class="search-box">
             <button><img src="{% static 'livrowebapp/img/search48px.png' %}"></button>
