@@ -90,6 +90,7 @@ body { /*probably not needed*/
     justify-content: center;
 }
 
+
 .popup .form .form-element input[type="password"], 
 .popup .form .form-element input[type="confirmpassword"] {
     margin-top: 5px;
@@ -104,6 +105,24 @@ body { /*probably not needed*/
 }
 
 .popup .form .form-element input[type="confirmpassword"] {
+    margin-left: 3%;
+}
+
+.popup .form .form-element input[type="password"].show-password,
+.popup .form .form-element input[type="text"].show-password,
+.popup .form .form-element input[type="confirmpassword"].show-password {
+    margin-top: 5px;
+    display: block;
+    width: 48%;
+    padding: 10px;
+    outline: none;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.15);
+    display: inline-block;
+}
+
+.popup .form .form-element input[type="confirmpassword"].show-password {
     margin-left: 3%;
 }
 
