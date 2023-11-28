@@ -14,11 +14,11 @@
       <img src="{% static 'livrowebapp/img/logo.png' %}" alt="Logo" width="100" >
       <h1>Sign In</h1>    
     </center>
-      <form action="/browse_writer/" method="GET"> 
-        <label for="emailuser">Email/username</label>
-        <input type ="text" placeholder = "Enter email/Username"required>
+      <form action="{% url 'signin' %}" method="GET"> 
+        <label for="emailuser">Email</label>
+        <input type ="text" placeholder = "Enter Email"required name="mail">
         <label for="password">Password</label>
-        <input type ="password" placeholder = "Enter password" required>
+        <input type ="password" placeholder = "Enter Password" required name="pass">
         <input type ="submit" value = "Sign in">
         <label for="donthaveacc">Don't have an account?<a href="/signup/">Sign up</a></label>
       </form>
