@@ -1,7 +1,7 @@
 from django.db import models
 
 class Member(models.Model):
-    username = models.CharField(max_length=20)
+    username = models.CharField(max_length=30)
     email = models.EmailField(max_length=30)
     password = models.CharField(max_length=16)
     type_user = models.CharField(max_length=10)
