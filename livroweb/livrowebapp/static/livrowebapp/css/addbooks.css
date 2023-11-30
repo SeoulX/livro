@@ -122,6 +122,5 @@ textarea{
   align-items: center; /* Center vertically within the flex container */
 }
 .note{
-  padding: 50px;
-  align-items: center;
+  padding: 10px 0px 50px 0px;
 }
