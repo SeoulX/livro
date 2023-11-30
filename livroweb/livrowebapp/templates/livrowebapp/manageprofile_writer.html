@@ -41,32 +41,34 @@
             <div class="settings">
                 <p> <b>Settings</b></p>
 
-                <div class="details">
-                    <table>
-                        <tr>
-                            <th><label for="username">Username:</label></th>
-                            <th><input type="text" id="username" name="username"></th>
-                        </tr>
+                <form action="{% url 'profile_writer' %}" method="POST">
+                    <div class="details">
+                        <table>
+                            <tr>
+                                <th><label for="username">Username:</label></th>
+                                <th><input type="text" id="username" name="username"></th>
+                            </tr>
 
-                        <tr>
-                            <th><label for="email">Email Address:</label></th>
-                            <th><input type="email" id="email" name="email"></th>
-                        </tr>
+                            <tr>
+                                <th><label for="email">Email Address:</label></th>
+                                <th><input type="email" id="email" name="email"></th>
+                            </tr>
 
-                        <tr>
-                            <th><label for="current_password">Current Password:</label></th>
-                            <th><input type="password" id="cpassword" name="current_password"></th>
-                        </tr>
+                            <tr>
+                                <th><label for="current_password">Current Password:</label></th>
+                                <th><input type="password" id="cpassword" name="current_password"></th>
+                            </tr>
 
-                        <tr>
-                            <th><label for="new_password">New Password:</label></th>
-                            <th><input type="password" id="npassword" name="new_password"></th>
-                        </tr>
+                            <tr>
+                                <th><label for="new_password">New Password:</label></th>
+                                <th><input type="password" id="npassword" name="new_password"></th>
+                            </tr>
 
-                        <tr>
-                            <th><label for="confirm_new_password">Confirm New Password:</label></th>
-                            <th><input type="password" id="cnpassword" name="confirm_new_password"></th>
-                        </tr>
+                            <tr>
+                                <th><label for="confirm_new_password">Confirm New Password:</label></th>
+                                <th><input type="password" id="cnpassword" name="confirm_new_password"></th>
+                            </tr>
+                    </form>
                     </table>
                 </div>
             </div>
