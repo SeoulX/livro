@@ -11,12 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .catch(error => console.error('Error fetching content:', error));
 }
 
-    function closePopup() {
-        var popupContainer = document.getElementById('popup-container');
-        popupContainer.innerHTML = '';  // Clear the content when closing
-        popupContainer.style.display = 'none';
-        popupContainer.classList.remove('overlay');
-    }
+
 
     document.getElementById('login-button').addEventListener('click', function () {
         openPopup('/signin/');
@@ -25,16 +20,6 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('signup-button').addEventListener('click', function () {
         openPopup('/signup/');
     });
-
-    function closeForm() {
-        closePopup();
-    }
-
-    var closeButtons = document.getElementsByClassName('closebutton');
-    for (var i = 0; i < closeButtons.length; i++) {
-        closeButtons[i].addEventListener('click', closeForm);
-    }
-
 
     window.addEventListener('popstate', function (event) {
         closePopup();
