@@ -24,13 +24,10 @@ a{display: inline-block;}
       
 }
 
-.logo img {
- width: auto;
- height: 50px;
-
+.logoMain img {
+    width: auto;
+    height: 50px;
 }
- 
-
 
 .nav{
     text-decoration: none;
@@ -52,14 +49,6 @@ a{display: inline-block;}
     margin: 10px 10px 10px 10px;
 }
 
-/* Logo styles */
- .logo1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10px 0;
-}
-
 /* Increase the logo size */
 
 .logo1 {
@@ -74,6 +63,10 @@ a{display: inline-block;}
     width: 100%; /* Use width: 100% to ensure responsiveness */
     max-width: 500px; /* Set a maximum width for the image to make it bigger */
     height: auto; /* Maintain the image's aspect ratio */
+}
+
+.overlay img{
+    width: 150px;
 }
 
 /* Tagline styles */

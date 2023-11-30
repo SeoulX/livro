@@ -18,7 +18,6 @@
           ><img src="{% static 'livrowebapp/img/logo.png' %}" width="100"
         /></a>
       </div>
-
       <div class="navbarRight">
         <tr>
           <a button class="upload" href="/browse_writer/">UPLOAD</a>
@@ -27,32 +26,34 @@
     </div>
     <div class="addbooks">
       <div class="book-cover">
-        <tr>
-          <th>
-            <a href="#">
-              <img
-                class="upload-cover"
-                src="{% static 'livrowebapp/img/Ellipse3.png' %}"
-            /></a>
-          </th>
-          <th>
-            <p><b>Book Cover</b></p>
-          </th>
-        </tr>
-        <p><b>Author</b></p>
-        <input type="text" name="authorbox" />
-        <p><b>Genre</b></p>
-        <input type="text" name="genrebox" />
-        <p><b>Access Link</b></p>
-        <input type="text" name="accesslink" />
-
-        <div class="description">
+        <form>
+          <tr>
+            <th>
+              <a href="#">
+                <img
+                  class="upload-cover"
+                  src="{% static 'livrowebapp/img/Ellipse3.png' %}"
+              /></a>
+            </th>
+            <th>
+              <p><b>Book Cover</b></p>
+            </th>
+          </tr>
+          <p><b>Book Title</b></p>
+          <input type="text" name="authorbox" />
+          <p><b>Author</b></p>
+          <input type="text" name="authorbox" />
+          <p><b>Genre</b></p>
+          <input type="text" name="genrebox" />
+          <p><b>Access Link</b></p>
+          <input type="text" name="accesslink" />
           <p><b>Description</b></p>
-          <input type="description" name="authorbox" />
-        </div>
+          <textArea type="text" class="textArea" name="authorbox" /></textArea>
+        </form>
       </div>
     </div>
     <div class="note">
     <p><b>Note: Uploading and verification of the book may take 2 to 3 days.<b></p>
+    </div>
   </body>
 </html>
