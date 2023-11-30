@@ -48,13 +48,31 @@ a{display: inline-block;}
   margin-right: 40px;
 }
 .upload{
+  background-color: #557b37;
+  border: none;
+  color: #fff;
+  padding: 5px 20px;
+  margin-right: 20px;
+  text-align: center;
   text-decoration: none;
-  padding-left: 20px;
-  padding-right: 20px;
-  color: #FFFFFF;
-  background-color: #557B37;
-  border-radius: 10px;
-  font-weight: bold;
+  display: inline-block;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 25px;
+  box-shadow: 0 2px 9px 0 rgba(0,0,0,.2); 
+}
+.cancel{
+  background-color: #b3b3b3;
+  border: none;
+  color: #fff;
+  padding: 5px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 25px;
+  box-shadow: 0 2px 9px 0 rgba(0,0,0,.2); 
 }
 .upload-cover{
     right: 10px;
@@ -96,6 +114,14 @@ textarea{
   min-width: 700px;
   min-height: 450px;
 }
+.book-cover{
+  width: 700px; /* Adjust the width as needed */
+  height: 200px; /* Adjust the height as needed */
+  margin: auto; /* Center horizontally */
+  justify-content: center; /* Center horizontally within the flex container */
+  align-items: center; /* Center vertically within the flex container */
+}
 .note{
   padding: 50px;
+  align-items: center;
 }

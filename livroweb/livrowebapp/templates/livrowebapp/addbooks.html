@@ -20,7 +20,9 @@
       </div>
       <div class="navbarRight">
         <tr>
-          <a button class="upload" href="/browse_writer/">UPLOAD</a>
+          <th><a button class="upload" href="/browse_writer/">UPLOAD</a></th>
+          <th> <a button class="cancel" href="/profile_writer/">CANCEL</a></th>
+
         </tr>
       </div>
     </div>
@@ -29,14 +31,14 @@
         <form action="{% url 'profile_writer' %}" method="POST">
           <tr>
             <th>
+              <p><b>Book Cover</b></p>
+            </th>
+            <th>
               <a href="#">
                 <img
                   class="upload-cover"
                   src="{% static 'livrowebapp/img/Ellipse3.png' %}"
               /></a>
-            </th>
-            <th>
-              <p><b>Book Cover</b></p>
             </th>
           </tr>
           <p><b>Book Title</b></p>
@@ -50,10 +52,8 @@
           <p><b>Description</b></p>
           <textArea type="text" class="textArea" name="authorbox" /></textArea>
         </form>
+        <p><b>Note: Uploading and verification of the book may take 2 to 3 days.<b></p>
       </div>
-    </div>
-    <div class="note">
-    <p><b>Note: Uploading and verification of the book may take 2 to 3 days.<b></p>
     </div>
   </body>
 </html>
