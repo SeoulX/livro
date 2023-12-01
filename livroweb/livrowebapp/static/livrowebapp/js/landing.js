@@ -7,9 +7,28 @@ document.addEventListener('DOMContentLoaded', function () {
             popupContainer.innerHTML = data;
             popupContainer.style.display = 'flex';
             popupContainer.classList.add('overlay');  // Add the overlay class
+
+            if(url == '/signup/'){
+                let password = document.getElementById ("password");
+                let confirmpassword = document.getElementById ("confirmpassword");
+                let showpassword = document.getElementById ("showpassword");
+            
+                showpassword.onclick = function (){
+                    if(password.type == "password") {
+                        password.type = "text";
+                        confirmpassword.type = "text"
+                    }else{
+                        password.type = "password";
+                        confirmpassword.type = "password"
+                    }
+                
+                    password.classList.toggle("show-password");
+                    confirmpassword.classList.toggle("show-password");
+            };}
+                
         })
         .catch(error => console.error('Error fetching content:', error));
-}
+    }
 
 
 
