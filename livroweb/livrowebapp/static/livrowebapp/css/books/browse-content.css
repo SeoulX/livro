@@ -1,72 +1,3 @@
-/* Global styles */
-body {
-    background-color: #f2f7ff;
-    font-family: Tahoma;
-    margin: 0px;
-
-
-}
-
-a{display: inline-block;}
-
-/* NAVBAR START */
-.navbar {
-    max-width:100vw;
-    background-color: #e3ecfc;
-    overflow: hidden;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 9px;
-    position: sticky;
-    top: 0px;
-    box-shadow: 0 2px 15px 0 rgba(0,0,0,.2);
-      
-}
-
-.logo img {
- width: auto;
- height: 50px;
-
-}
- 
-
-
-.navbarRight a{
-    text-decoration: none;
-    color: #333333;
-    font-family: tahoma;
-    font-size: 20px;
-    font-weight: bold;
-    margin-right: 40px;
-    margin-top: 5px;
- 
-}
-/* NAVBAR END!! */
-
-<<<<<<< HEAD
-/* ABOUT USER START */
-.aboutuser{
-    margin: auto;
-    margin-top: 3%;
-    padding: 50px;
-    background-color: #FFFFFF;
-    max-width: 300px;
-    border-radius: 20px;
-    box-shadow: inset 0px 0px 2px 0px rgba(0, 0, 0, 0.8);
-}
-
-.aboutuser p{
-    text-align: left;
-    margin-top: -5%;
-    margin-left: -5%;
-    margin-bottom: 50px;
-}
-
-
-/* ABOUT USER END */
-
-
 
 /* SEARCH */
 
@@ -141,6 +72,15 @@ a{display: inline-block;}
     
 }
 
+
+li,ul{
+    max-width: 170px;
+    list-style: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
 .browsebottom{
     display: flex;
     flex-direction:column;
@@ -157,7 +97,7 @@ a{display: inline-block;}
     margin-bottom: 10px;
 }
 
-.books p{
+.books button{
     padding: 3px;
     display: inline;
     border: 1px;
@@ -189,56 +129,6 @@ a{display: inline-block;}
 
 }
 
-.overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
-}
-
-.popup {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 500px;
-    padding: 20px 30px;
-    background: #F2F7FF;
-    box-shadow: 2px 2px 5px 5px rgba(0,0,0,0.15);
-    border-radius: 10px;
-}
-
-.close-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-}
-.overlay img{
-    width: 150px;
-}
-
-.role .read img{
-    width: 75px;
-}
-
 /* BOOKSHELF END!! */
 
 
-@media
-(prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
-    max-width: 100%;
- overflow-x: hidden;
- margin: 0px;
-  }
-}
-=======
->>>>>>> f6f248b (papicommit)

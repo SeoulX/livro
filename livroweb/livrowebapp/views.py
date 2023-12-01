@@ -78,4 +78,18 @@ def manageprofile(request):
 def manageprofile_writer(request):
     return render(request, 'livrowebapp/manageprofile_writer.html')
 def bookinformation(request):
+<<<<<<< HEAD
     return render(request, 'livrowebapp/bookinformation.html')
+=======
+    return render(request, 'livrowebapp/bookinformation.html')
+def browse_reader(request):
+    return render(request, 'livrowebapp/browse_reader.html')
+def browse_writer(request):
+    return render(request, 'livrowebapp/browse_writer.html')
+
+
+def fantasy(request):
+    return render(request, 'livrowebapp/books/fantasy.html')
+def action(request):
+    return render(request, 'livrowebapp/books/action.html')
+>>>>>>> f6f248b (papicommit)
