@@ -3,18 +3,19 @@ from django.shortcuts import render, redirect
 from .models import Member
 from .forms import Memberform
 from django.contrib import messages
+from django.db.models import Q
 
 def land(request):
     return render(request, 'livrowebapp/landing.html')
 def signin(request):
     if request.method == "GET":
-        mail = request.GET.get('mail')
+        identifier = request.GET.get('identifier')
         passw = request.GET.get('pass')
         now = datetime.now()
         hour = now.hour
         greeting = 'Good Morning' if 5 <= hour < 12 else ('Good afternoon' if 12 <= hour < 18 else 'Good Evening')
         try:
-            member = Member.objects.get(email=mail, password=passw)
+            member = Member.objects.get(Q(email=identifier) | Q(username=identifier), password=passw)
             request.session['member'] = {
                     'username': member.username,
                     'email': member.email,
@@ -28,7 +29,8 @@ def signin(request):
             elif member.type_user == 'Writer':
                 messages.success(request, f'{greeting}, {member.username}!')
                 return redirect('browse_writer')
-        except Member.DoesNotExist:
+        except Member.DoesNotExist as e:
+            print(f"Error: {e}")
             return render(request, 'livrowebapp/signin.html')
     else:
         return render(request, 'livrowebapp/signin.html')
