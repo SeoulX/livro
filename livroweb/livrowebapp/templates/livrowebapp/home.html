@@ -19,9 +19,14 @@
             <th> <a href="/browse_writer/"> Home</a> </th>
             <th> <a href="/aboutus/"> About Us </a> </th>
             <th>  <a href="/browse/"> Logout</a> </th>
-            <th>  <a href="/profile_writer"> <img class="profileicon" src="{% static 'livrowebapp/img/profileicon.png' %}"></a> </th>
+            <th>
+              {% if member.type_user == 'Reader' %}
+                <a href="{% url 'profile' %}"><img class="profileicon" src="{% static 'livrowebapp/img/profileicon.png' %}"></a>
+              {% elif member.type_user == 'Writer' %}
+                <a href="{% url 'profile_writer' %}"><img class="profileicon" src="{% static 'livrowebapp/img/profileicon.png' %}"></a>
+              {% endif %}
+            </th>
           </tr>
-               
     </div>
   </div>
   <link href="{% static 'livrowebapp/css/_navbar.css' %}" rel="stylesheet" />

@@ -32,21 +32,21 @@
                     <label for="username">Username</label>
                 </div>
                 <div class ="form-element">
-                    <input type="text" placeholder="Username" id="username" name="username">
+                    <input type="text" placeholder="Username" id="username" name="username" maxlength="30" required>
                 </div>
                 <div class ="form-element">
                     <label for="email">Email</label>
                 </div>
                 <div class ="form-element">
-                    <input type="text" placeholder="Email" id="email" name="email">
+                    <input type="text" placeholder="Email" id="email" name="email" maxlength="30" required>
                 </div>
                 <div class ="form-element">
                     <label for="password">Password</label>
                     <label for="confirmpassword">Confirm Password</label>
                 </div>
                 <div class ="form-element">
-                    <input type="password" placeholder="Password" id="password" name="password">
-                    <input type="password" placeholder="Confirm Password"id="confirmpassword">
+                    <input type="password" placeholder="Password" id="password" name="passw" maxlength="16" required>
+                    <input type="password" placeholder="Confirm Password" id="confirmpassword" name="confirmpass" maxlength="16" required>
                 </div>
                 <div class="form-element">
                     <input type="checkbox" id="showpassword" onclick="showPass">
@@ -59,7 +59,7 @@
                         <div class="read" style="text-align: center; margin-right: 100px;">
                             <img src="{% static 'livrowebapp/img/reader.png' %}" alt="Image" width="75px">
                             <br/>
-                            <input type="radio" id="reader" name="type_user" value="Reader" style="margin-top: 5px;" />
+                            <input type="radio" id="reader" name="type_user" value="Reader" style="margin-top: 5px;" checked/>
                             <label for="reader">Reader</label>
                         </div>
                         <div class="read" style="text-align: center;">

@@ -5,6 +5,7 @@ class Member(models.Model):
     email = models.EmailField(max_length=30)
     password = models.CharField(max_length=16)
     type_user = models.CharField(max_length=10)
+    about_user = models.TextField(default='')
     libraries = models.ManyToManyField('Library', related_name='members')
     active = models.BooleanField(default=True) 
     

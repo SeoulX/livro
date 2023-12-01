@@ -6,18 +6,13 @@
 <div class="content">
   <div class="profilebackground">
     <img src="{% static 'livrowebapp/img/writerimage.png' %}" />
-    <p>@username</p>
+    <p>@{{ member.username }}</p>
     <a button class="editprofile" href="/manageprofile_writer/">Edit Profile</a>
-
   </div>
-
   <div class="profilebottom">
-
-
     <div class="profilebottomLeft">
       <div class="aboutuser">
-
-        <p> <b>About user: </b> <br>
+        <p><b>About user:</b> <br>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. </p>
       </div>

@@ -15,6 +15,13 @@ def signin(request):
         greeting = 'Good Morning' if 5 <= hour < 12 else ('Good afternoon' if 12 <= hour < 18 else 'Good Evening')
         try:
             member = Member.objects.get(email=mail, password=passw)
+            request.session['member'] = {
+                    'username': member.username,
+                    'email': member.email,
+                    'password' : member.password,
+                    'type_user': member.type_user,
+                    'about_user': member.about_user
+                }
             if member.type_user == 'Reader':
                 messages.success(request, f'{greeting}, {member.username}!')
                 return redirect('browse_reader')
@@ -27,23 +34,37 @@ def signin(request):
         return render(request, 'livrowebapp/signin.html')
 def signup(request):
     if request.method == "POST":
-        form = Memberform(request.POST or None)
-        if form.is_valid():
-            member = form.save()
-            if member.type_user == 'Reader':
-                messages.success(request, ('Thanks for Signing Up!'))
-                return redirect('browse_reader')
-            elif member.type_user == 'Writer':
-                messages.success(request, ('Thanks for Signing Up!'))
-                return redirect('browse_writer')
+        passw = request.POST.get('passw')
+        confirmpass = request.POST.get('confirmpass')
+        if(passw == confirmpass):
+            form = Memberform(request.POST or None)
+            if form.is_valid():
+                member = form.save()
+                if member.type_user == 'Reader':
+                    messages.success(request, ('Thanks for Signing Up!'))
+                    return redirect('browse_reader')
+                elif member.type_user == 'Writer':
+                    messages.success(request, ('Thanks for Signing Up!'))
+                    return redirect('browse_writer')
+        else:
+            messages.error(request, ('Password Not Match!'))
     else:    
         return render(request, 'livrowebapp/signup.html')
 def aboutus(request):
     return render(request, 'livrowebapp/aboutus.html')
-def readwrite(request):
-    return render(request, 'livrowebapp/readwrite.html')
+def browse_reader(request):
+    member_data = request.session.get('member', None)
+    return render(request, 'livrowebapp/browse_reader.html', {'member': member_data})
+def browse_writer(request):
+    member_data = request.session.get('member', None)
+    return render(request, 'livrowebapp/browse_writer.html', {'member': member_data})
 def profile(request):
-    return render(request, 'livrowebapp/profile.html')
+    member_data = request.session.get('member', None)
+    return render(request, 'livrowebapp/profile.html', {'member': member_data})
+def profile_writer(request):
+    member_data = request.session.get('member', None)
+    
+    return render(request, 'livrowebapp/profile_writer.html', {'member': member_data})
 def home(request):
     return render(request, 'livrowebapp/home.html')
 def addbooks(request):
@@ -54,11 +75,5 @@ def manageprofile(request):
     return render(request, 'livrowebapp/manageprofile.html')
 def manageprofile_writer(request):
     return render(request, 'livrowebapp/manageprofile_writer.html')
-def profile_writer(request):
-    return render(request, 'livrowebapp/profile_writer.html')
 def bookinformation(request):
     return render(request, 'livrowebapp/bookinformation.html')
-def browse_reader(request):
-    return render(request, 'livrowebapp/browse_reader.html')
-def browse_writer(request):
-    return render(request, 'livrowebapp/browse_writer.html')
