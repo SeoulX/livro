@@ -6,6 +6,7 @@ class Member(models.Model):
     password = models.CharField(max_length=16)
     type_user = models.CharField(max_length=10)
     libraries = models.ManyToManyField('Library', related_name='members')
+    active = models.BooleanField(default=True) 
     
     def __str__(self):
         return self.username
