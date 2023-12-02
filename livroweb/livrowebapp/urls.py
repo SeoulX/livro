@@ -18,4 +18,5 @@ urlpatterns = [
     path('browse_reader/', views.browse_reader, name='browse_reader'),
     path('browse_writer/', views.browse_writer, name='browse_writer'),
     path('fantasy/', views.fantasy, name='fantasy'),
+    path('updatebooks/', views.updatebooks, name='updatebooks'),
 ]
