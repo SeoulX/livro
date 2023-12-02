@@ -52,7 +52,6 @@ def signup(request):
             messages.error(request, ('Password Not Match!'))
     else:    
         return render(request, 'livrowebapp/signup.html')
-
 def aboutus(request):
     return render(request, 'livrowebapp/aboutus.html')
 def aboutus_logged(request):
@@ -69,18 +68,19 @@ def profile(request):
     return render(request, 'livrowebapp/profile.html', {'member': member_data})
 def profile_writer(request):
     member_data = request.session.get('member', None)
-    
     return render(request, 'livrowebapp/profile_writer.html', {'member': member_data})
+def manageprofile(request):
+    member_data = request.session.get('member', None)
+    return render(request, 'livrowebapp/manageprofile.html', {'member': member_data})
+def manageprofile_writer(request):
+    member_data = request.session.get('member', None)
+    return render(request, 'livrowebapp/manageprofile_writer.html', {'member': member_data})
 def home(request):
     return render(request, 'livrowebapp/home.html')
 def addbooks(request):
     return render(request, 'livrowebapp/addbooks.html')
 def browse(request):
     return render(request, 'livrowebapp/browse.html')
-def manageprofile(request):
-    return render(request, 'livrowebapp/manageprofile.html')
-def manageprofile_writer(request):
-    return render(request, 'livrowebapp/manageprofile_writer.html')
 def bookinformation(request):
     return render(request, 'livrowebapp/bookinformation.html')
 def fantasy(request):
