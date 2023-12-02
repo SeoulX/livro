@@ -16,8 +16,16 @@
 
       <div class="navbarRight">        
         <tr>
-            <th> <a href="/browse_writer/"> Home</a> </th>
-            <th> <a href="/aboutus/"> About Us </a> </th>
+            <th>
+              {% if member.type_user == 'Reader' %}
+              <a href="/browse_reader/"> Home</a> 
+              {% elif member.type_user == 'Writer' %}
+              <a href="/browse_writer/"> Home</a>
+              {% endif %} 
+            </th>
+            <th> 
+              <a href="/aboutus/"> About Us </a> 
+            </th>
             <th>  <a href="/browse/"> Logout</a> </th>
             <th>
               {% if member.type_user == 'Reader' %}
