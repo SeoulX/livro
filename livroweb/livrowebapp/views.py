@@ -52,8 +52,12 @@ def signup(request):
             messages.error(request, ('Password Not Match!'))
     else:    
         return render(request, 'livrowebapp/signup.html')
+
 def aboutus(request):
     return render(request, 'livrowebapp/aboutus.html')
+def aboutus_logged(request):
+    member_data = request.session.get('member', None)
+    return render(request, 'livrowebapp/aboutus_logged.html', {'member': member_data})
 def browse_reader(request):
     member_data = request.session.get('member', None)
     return render(request, 'livrowebapp/browse_reader.html', {'member': member_data})

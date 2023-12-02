@@ -24,7 +24,11 @@
               {% endif %} 
             </th>
             <th> 
-              <a href="/aboutus/"> About Us </a> 
+              {% if member.type_user == 'Reader' %}
+              <a href="/aboutus_logged/"> About Us</a> 
+              {% elif member.type_user == 'Writer' %}
+              <a href="/aboutus_logged/"> About Us</a>
+              {% endif %} 
             </th>
             <th>  <a href="/browse/"> Logout</a> </th>
             <th>
