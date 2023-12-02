@@ -8,3 +8,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+function addGenre() {
+    var genreSelect = document.getElementById("genres");
+    var genreInput = document.getElementById("genreText");
+
+    var selectedGenre = genreSelect.options[genreSelect.selectedIndex].value;
+
+    if (genreInput.value === "") {
+        genreInput.value = selectedGenre;
+    } else {
+        genreInput.value += ", " + selectedGenre;
+    }
+}
