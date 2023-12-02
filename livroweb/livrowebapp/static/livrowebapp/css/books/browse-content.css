@@ -73,7 +73,7 @@
 }
 
 
-li,ul{
+.browsebottom li,ul{
     max-width: 170px;
     list-style: none;
     text-overflow: ellipsis;
@@ -88,6 +88,7 @@ li,ul{
     margin: 0 auto;
     overflow: hidden;
 }
+
 /* BOOKSHELF START */
 .genrebox{
     margin: auto;
@@ -128,6 +129,80 @@ li,ul{
     font-size: 30px;
 
 }
+
+/* BOOKSHELF END!! */
+
+/*hidden content*/
+
+
+.hidden-content{
+    display: flex;
+    flex-direction:column;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.hidden-content .genrebox{
+    margin: auto;
+    width: 100%;
+    padding: 0px;
+    max-width: 1300px;
+    margin-bottom: 10px;
+
+}
+
+.hidden-content .books {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap; 
+    overflow-x: auto;
+ 
+    flex-direction: row;
+    margin-bottom: 10px;
+   justify-content: flex-start;
+
+  }
+
+
+
+  
+.hidden-content button{
+    padding: 3px;
+    display: inline;
+    border: 1px;
+    border-style: solid;
+    border-color: #333333;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    padding-left: 10px;
+    padding-right: 10px;
+
+   margin-left: 4px;
+}
+
+.hidden-content li,ul{
+    max-width: 170px;
+    list-style: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.hidden-content img{
+    width: auto;
+    height: 250px;
+    padding: 5px;
+    border-radius: 15px;
+   
+}
+
+.hidden-content p b{ 
+    font-size: 30px;
+
+}
+
+
+
 
 /* BOOKSHELF END!! */
 
