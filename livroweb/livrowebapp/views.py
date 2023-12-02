@@ -78,7 +78,7 @@ def manageprofile_writer(request):
 def addbooks(request):
     member_data = request.session.get('member', None)
     if request.method == 'POST':
-        formBook = BookForm(request.POST, request.FILES)
+        formBook = BookForm(request.POST, request.FILES, exclude=['uploader'])
         if formBook.is_valid():
             book = formBook.save(commit=False)
             book.uploader = Member.objects.get(username=member_data['username'])
