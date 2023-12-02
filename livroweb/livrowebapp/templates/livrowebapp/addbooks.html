@@ -20,15 +20,14 @@
       </div>
       <div class="navbarRight">
         <tr>
-          <th><a button class="upload" href="/browse_writer/">UPLOAD</a></th>
+          <th><a button id="Upload" class="upload" href="/browse_writer/">UPLOAD</a></th>
           <th> <a button class="cancel" href="/profile_writer/">CANCEL</a></th>
-
         </tr>
       </div>
     </div>
     <div class="addbooks">
       <div class="book-cover">
-        <form action="{% url 'profile_writer' %}" method="POST">
+        <form id="addBookForm" action="{% url 'profile_writer' %}" method="POST">
           <tr>
             <th>
               <p><b>Book Cover</b></p>
@@ -57,5 +56,6 @@
         </div>
       </div>
     </div>
+    <script src="{% static 'livrowebapp/js/addbooks.js' %}"></script>
   </body>
 </html>

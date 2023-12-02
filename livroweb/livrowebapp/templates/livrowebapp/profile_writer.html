@@ -7,7 +7,7 @@
   <div class="profilebackground">
     <img src="{% static 'livrowebapp/img/writerimage.png' %}" />
     <p>@{{ member.username }}</p>
-    <a button class="editprofile" href="/manageprofile_writer/">Edit Profile</a>
+    <a button class="editprofile" href="{% url 'manageprofile_writer' %}">Edit Profile</a>
   </div>
   <div class="profilebottom">
     <div class="profilebottomLeft">
@@ -16,7 +16,7 @@
       </div>
 
       <div class="addbutton">
-        <a button class="addbook" href="/addbooks/">Upload Book</a>
+        <a button class="addbook" href="{% url 'addbooks' %}">Upload Book</a>
       </div>
 
     </div>
@@ -24,10 +24,8 @@
     <div class="userbookshelf">
 
       <p> <b>User Bookshelf</b> <br>
-        Reading List</p>
-
+        Uploaded Books</p>
       <div class="books">
-
         <table>
           <tr>
             <th> <a href="#"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a></th>
@@ -59,16 +57,8 @@
           </tr>
         </table>
       </div>
-
     </div>
-
-
-
   </div>
-
 </div>
-
-<script src="{% static 'livrowebapp/js/profile.js' %}"></script>
-{% endblock %}
 <script src="{% static 'livrowebapp/js/profile.js' %}"></script>
 {% endblock %}

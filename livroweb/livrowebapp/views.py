@@ -1,6 +1,6 @@
 from datetime import datetime
 from django.shortcuts import render, redirect
-from .models import Member
+from .models import *
 from .forms import Memberform
 from django.contrib import messages
 from django.db.models import Q
@@ -75,10 +75,11 @@ def manageprofile(request):
 def manageprofile_writer(request):
     member_data = request.session.get('member', None)
     return render(request, 'livrowebapp/manageprofile_writer.html', {'member': member_data})
+def addbooks(request):
+    member_data = request.session.get('member', None)
+    return render(request, 'livrowebapp/addbooks.html')
 def home(request):
     return render(request, 'livrowebapp/home.html')
-def addbooks(request):
-    return render(request, 'livrowebapp/addbooks.html')
 def browse(request):
     return render(request, 'livrowebapp/browse.html')
 def bookinformation(request):
