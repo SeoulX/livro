@@ -62,7 +62,8 @@ def browse_reader(request):
     return render(request, 'livrowebapp/browse_reader.html', {'member': member_data})
 def browse_writer(request):
     member_data = request.session.get('member', None)
-    return render(request, 'livrowebapp/browse_writer.html', {'member': member_data})
+    all_books = Book.objects.all()
+    return render(request, 'livrowebapp/browse_writer.html', {'member': member_data, 'all_books': all_books})
 def profile(request):
     member_data = request.session.get('member', None)
     return render(request, 'livrowebapp/profile.html', {'member': member_data})
@@ -138,3 +139,7 @@ def fantasy(request):
     return render(request, 'livrowebapp/books/fantasy.html')
 def action(request):
     return render(request, 'livrowebapp/books/action.html')
+def browse_content(request):
+    member_data = request.session.get('member', None)
+    all_books = Book.objects.all()
+    return render(request, 'livrowebapp/browse-content.html', {'member': member_data, 'all_books': all_books})

@@ -23,6 +23,7 @@ urlpatterns = [
     path('updatebooks/', views.updatebooks, name='updatebooks'),
     path('edit_book/<int:book_id>/', views.edit_book, name='edit_book'),
     path('delete_book/<int:book_id>/', views.delete_book, name='delete_book'),
+    path('browse-content/', views.browse_content, name='browse_content'),
 ]
 
 if settings.DEBUG:

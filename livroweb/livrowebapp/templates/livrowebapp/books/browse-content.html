@@ -24,56 +24,22 @@
 
       <div class="genrebox" id="g1">
         <p><b>Top 10 Trending Books</b></p>
-        <div class="books">
-          <table>
-            <tr>
-
-              <!--create the forloop dito para mag iterate sa table-->
-                <td><ul>
-                    <li><a href="#"> <img class="profileimg"   src="{% static 'livrowebapp/img/book1.png' %}"></a></li>
-                    <li><p id ="fantasy-title">tithhhdsadhasdasdposaodiasodiapsodipaosidpaosidple</p></li>
-                    <li><button type="button" class="fantasybtn" value="Fantasy">Fantasy</button></td></li>
-                </ul></td>
-               <!--endloop-->
-
-               <!--it looks like this when iterated-->
-               <td><ul>
-                <li><a href="#"> <img class="profileimg"   src="{% static 'livrowebapp/img/book1.png' %}"></a></li>
-                <li><p id ="fantasy-title">tithhhdsadhasdasdposaodiasodiapsodipaosidpaosidple</p></li>
-                <li><button type="button" class="fantasybtn" value="Fantasy">Fantasy</button></td></li>
-                </ul></td>
-
-                <td><ul>
-                  <li><a href="#"> <img class="profileimg"   src="{% static 'livrowebapp/img/book1.png' %}"></a></li>
-                  <li><p id ="fantasy-title">tithhhdsadhasdasdposaodiasodiapsodipaosidpaosidple</p></li>
-                  <li><button type="button" class="fantasybtn" value="Fantasy">Fantasy</button></td></li>
-                  </ul></td>
-
-                  <td><ul>
-                    <li><a href="#"> <img class="profileimg"   src="{% static 'livrowebapp/img/book1.png' %}"></a></li>
-                    <li><p id ="fantasy-title">tithhhdsadhasdasdposaodiasodiapsodipaosidpaosidple</p></li>
-                    <li><button type="button" class="fantasybtn" value="Fantasy">Fantasy</button></td></li>
-                    </ul></td>
-
-                    <td><ul>
-                      <li><a href="#"> <img class="profileimg"   src="{% static 'livrowebapp/img/book1.png' %}"></a></li>
-                      <li><p id ="fantasy-title">tithhhdsadhasdasdposaodiasodiapsodipaosidpaosidple</p></li>
-                      <li><button type="button" class="fantasybtn" value="Fantasy">Fantasy</button></td></li>
-                      </ul></td>
-
-                      <td><ul>
-                        <li><a href="#"> <img class="profileimg"   src="{% static 'livrowebapp/img/book1.png' %}"></a></li>
-                        <li><p id ="fantasy-title">tithhhdsadhasdasdposaodiasodiapsodipaosidpaosidple</p></li>
-                        <li><button type="button" class="fantasybtn" value="Fantasy">Fantasy</button></td></li>
-                        </ul></td>
-           
-  
-                  <!--end!-->
-
-            </tr>
-          </table>
-        </div>
-      </div>
+<div class="books">
+  <table>
+    <tr>
+        {% for book in all_books %}
+            <td>
+                <ul>
+                    <li><a href="#"><img class="profileimg" src="{{ book.book_cover.url }}"></a></li>
+                    <li><p id="book-title">{{ book.title }}</p></li>
+                    <li><button type="button" class="genre-btn" value="{{ book.genre }}">{{ book.genre }}</button></li>
+                </ul>
+            </td>
+        {% endfor %}
+    </tr>
+</table>
+</div>
+</div>
 
       <div class="genrebox" id="g1">
         <p><b>Top 10 Trending Action Books</b></p>
