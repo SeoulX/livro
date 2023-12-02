@@ -24,10 +24,10 @@ class Book(models.Model):
     title = models.CharField(max_length=200)
     author = models.CharField(max_length=200)
     genre = models.CharField(max_length=100)
-    access_link = models.URLField(default='')
+    access_link = models.URLField(null=True, blank=True)
     description = models.TextField()
     book_cover = models.ImageField(upload_to='book_covers/')
-    uploader = models.ForeignKey(Member, on_delete=models.CASCADE, related_name='uploaded_books')
+    uploader = models.ForeignKey(Member, on_delete=models.CASCADE, related_name='uploaded_books', null=True)
     feedbacks = models.ManyToManyField('Feedback', related_name='books')
     
 class Feedback(models.Model):

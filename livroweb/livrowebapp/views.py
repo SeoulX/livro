@@ -100,3 +100,5 @@ def fantasy(request):
     return render(request, 'livrowebapp/books/fantasy.html')
 def action(request):
     return render(request, 'livrowebapp/books/action.html')
+def updatebooks(request):
+    return render(request, 'livrowebapp/updatebooks.html')
