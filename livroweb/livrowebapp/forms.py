@@ -1,5 +1,5 @@
 from django import forms
-from .models import Member, Book
+from .models import Member, Book, Library, Feedback
 
 class Memberform(forms.ModelForm):
     class Meta:
@@ -13,3 +13,9 @@ class BookForm(forms.ModelForm):
         widgets = {
             'uploader': forms.HiddenInput(),
         }
+        
+class FeedbackForm(forms.ModelForm):
+    class Meta:
+        model = Feedback
+        fields = ['user', 'book', 'likes', 'dislikes', 'comments']
+        
