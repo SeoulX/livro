@@ -9,7 +9,7 @@ class Memberform(forms.ModelForm):
 class BookForm(forms.ModelForm):
     class Meta:
         model = Book
-        fields = ['title', 'author', 'genre', 'description', 'book_cover']
+        fields = ['title', 'author', 'genre', 'access_link', 'description', 'book_cover']
         widgets = {
             'uploader': forms.HiddenInput(),
         }

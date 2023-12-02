@@ -81,7 +81,7 @@ def addbooks(request):
         formBook = BookForm(request.POST, request.FILES)
         if formBook.is_valid():
             book = formBook.save(commit=False)
-            book.uploader = member_data['username']
+            book.uploader = Member.objects.get(username=member_data['username'])
             book.save()
             messages.success(request, 'Book added successfully!')
             return redirect('profile_writer')
