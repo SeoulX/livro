@@ -1,7 +1,7 @@
 from datetime import datetime
 from django.shortcuts import render, redirect
 from .models import *
-from .forms import Memberform
+from .forms import *
 from django.contrib import messages
 from django.db.models import Q
 
@@ -77,7 +77,19 @@ def manageprofile_writer(request):
     return render(request, 'livrowebapp/manageprofile_writer.html', {'member': member_data})
 def addbooks(request):
     member_data = request.session.get('member', None)
-    return render(request, 'livrowebapp/addbooks.html')
+    if request.method == 'POST':
+        formBook = BookForm(request.POST, request.FILES)
+        if formBook.is_valid():
+            book = formBook.save(commit=False)
+            book.uploader = member_data['username']
+            book.save()
+            messages.success(request, 'Book added successfully!')
+            return redirect('profile_writer')
+        else:
+            messages.error(request, 'Error adding the book. Please check the form.')
+    else:
+        formBook = BookForm()
+    return render(request, 'livrowebapp/addbooks.html', {'member': member_data})
 def home(request):
     return render(request, 'livrowebapp/home.html')
 def browse(request):
@@ -88,5 +100,3 @@ def fantasy(request):
     return render(request, 'livrowebapp/books/fantasy.html')
 def action(request):
     return render(request, 'livrowebapp/books/action.html')
-def updatebooks(request):
-    return render(request, 'livrowebapp/updatebooks.html')
