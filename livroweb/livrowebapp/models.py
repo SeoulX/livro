@@ -28,6 +28,7 @@ class Book(models.Model):
     description = models.TextField()
     book_cover = models.ImageField(upload_to='book_covers/')
     uploader = models.ForeignKey(Member, on_delete=models.CASCADE, related_name='uploaded_books', null=True)
+    uploader_user = models.CharField(max_length=200)
     feedbacks = models.ManyToManyField('Feedback', related_name='books')
     
 class Feedback(models.Model):
