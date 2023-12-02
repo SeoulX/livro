@@ -106,7 +106,17 @@ def edit_book(request, book_id):
         if request.method == 'POST':
             form = BookForm(request.POST, request.FILES, instance=book)
             if form.is_valid():
-                form.save()
+
+                updated_book = form.save(commit=False)
+                
+
+                new_cover = request.FILES.get('book_cover')
+                if new_cover:
+                    updated_book.book_cover = new_cover
+                
+
+                updated_book.save()
+
                 messages.success(request, 'Book updated successfully!')
                 return redirect('updatebooks')
             else:
@@ -115,7 +125,6 @@ def edit_book(request, book_id):
             form = BookForm(instance=book)
         return render(request, 'livrowebapp/editbooks.html', {'member': member_data, 'form': form, 'book': book})
     else:
-        # Redirect or handle the case when a non-writer tries to edit a book
         return redirect('profile_writer')
 def delete_book(request, book_id):
     member_data = request.session.get('member', None)
@@ -125,7 +134,7 @@ def delete_book(request, book_id):
             book.delete()
             messages.success(request, 'Book deleted successfully!')
             return redirect('updatebooks')
-        return render(request, 'livrowebapp/delete_book.html', {'member': member_data, 'book': book})
+        return render(request, 'livrowebapp/deletebook.html', {'member': member_data, 'book': book})
     else:
         # Redirect or handle the case when a non-writer tries to delete a book
         return redirect('profile_writer')

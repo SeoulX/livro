@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <link href="{% static 'livrowebapp/css/addbooks.css' %}" rel="stylesheet" />
+    <link href="{% static 'livrowebapp/css/editbooks.css' %}" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0" />
     <title>livro</title>
 </head>
@@ -17,18 +17,30 @@
         <div class="navbarRight">
             <tr>
                 <th><button id="Upload" class="upload" type="submit" form="addBookForm">UPDATE</button></th>
-                <th><a button class="cancel" href="/profile_writer/">CANCEL</a></th>
+                <th><a button class="cancel" href="/updatebooks/">CANCEL</a></th>
             </tr>
         </div>
     </div>
     <div class="addbooks">
         <div class="book-cover">
-            <form id="addBookForm" action="{% url 'edit_book' book.id %}" method="POST">
+            <form id="addBookForm" action="{% url 'edit_book' book.id %}" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
-                <p><b>Book Cover</b></p>
-                <a href="#">
-                    <img class="upload-cover" src="{{ book.book_cover.url }}" />
-                </a>
+                <tr>
+                    <th>
+                      <p><b>Book Cover</b></p>
+                    </th>
+                    <th>
+                      <input type="file" id="coverInput" name="book_cover" accept="image/*" style="display: none;" onchange="previewCoverImage(this)">
+                    </th>
+                    <th>
+                      <a href="#" id="getCover">
+                        <img
+                          class= "upload-cover" id="coverPreview"
+                          src="{{ book.book_cover.url }}"
+                          style="max-height: 200px; "
+                      /></a>
+                    </th>
+                  </tr> 
                 <p><b>Book Title</b></p>
                 <input type="text" name="title" value="{{ book.title }}" />
                 <p><b>Author</b></p>

@@ -74,9 +74,18 @@ a{display: inline-block;}
   border-radius: 25px;
   box-shadow: 0 2px 9px 0 rgba(0,0,0,.2); 
 }
-.upload-cover{
-    right: 10px;
-    left: 150px;
+.book-cover {
+  width: 100%; 
+  max-width: 700px; 
+  height: auto; 
+  margin: auto; 
+  justify-content: center; 
+  align-items: center; 
+}
+
+.upload-cover {
+  width: 100%; 
+  max-height: 400px; 
 }
 .addbooks {
     margin: auto;
@@ -127,18 +136,8 @@ textarea{
   min-width: 700px;
   min-height: 450px;
 }
-.book-cover{
-  width: 700px; /* Adjust the width as needed */
-  height: 200px; /* Adjust the height as needed */
-  margin: auto; /* Center horizontally */
-  justify-content: center; /* Center horizontally within the flex container */
-  align-items: center; /* Center vertically within the flex container */
-}
+
 .note{
   padding: 10px 0px 50px 0px;
 }
 
-.upload-cover.resized {
-    max-height: 400px; /* Set the desired max height */
-    width: auto; /* Maintain the aspect ratio */
-}
