@@ -1,70 +1,37 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link href="{% static 'livrowebapp/css/addbooks.css' %}" rel="stylesheet" />
-    <meta
-      name="viewport"
-      content="width=device-width, height=device-height, initial-scale=1.0"
-    />
-    <title>livro</title>
-  </head>
+{% extends 'livrowebapp/home.html' %}
+{% load static %} 
+{% block content %}
 
-  <body>
-    <div class="navbar" id="myNavbar">
-      <div class="logo">
-        <a href="browse"
-          ><img src="{% static 'livrowebapp/img/logo.png' %}" width="100"
-        /></a>
-      </div>
-      <div class="navbarRight">
-        <tr>
-          <th><a button id="Upload" class="upload" href="/browse_writer/">UPDATE</a></th>
-          <th> <a button class="cancel" href="/profile_writer/">CANCEL</a></th>
-        </tr>
-      </div>
-    </div>
-    <div class="addbooks">
-      <div class="book-cover">
-        <form id="addBookForm" action="{% url 'profile_writer' %}" method="POST">
+  <link href="{% static 'livrowebapp/css/updatebooks.css' %}" rel="stylesheet" />
+    
+
+    <div class="wrap">
+      <h1>Your Books</h1>
+    
+      <table class="book-table">
+        <thead>
           <tr>
-            <th>
-              <p><b>Book Cover</b></p>
-            </th>
-            <th>
-              <a href="#">
-                <img
-                  class="upload-cover"
-                  src="{% static 'livrowebapp/img/Ellipse3.png' %}"
-              /></a>
-            </th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Genre</th>
+            <th>Book Cover</th>
+            <th>Action</th>
           </tr>
-          <p><b>Book Title</b></p>
-          <input type="text" name="authorbox" />
-          <p><b>Author</b></p>
-          <input type="text" name="authorbox" />
-          <p><b>Genre</b></p>
-          <select class="choicesGenre" name="genre" id="genres" onchange="addGenre()">
-            <option value="Action">Action</option>
-            <option value="Fantasy">Fantasy</option>
-            <option value="Young Adult">Young Adult</option>
-            <option value="Comedy">Comedy</option>
-            <option value="Romance">Romance</option>
-            <option value="Non-Fiction">Non-Fiction</option>
-            <option value="Science Fiction">Science Fiction</option>
-            <option value="Horror">Horror</option>
-          </select>
-          <p><b>Access Link</b></p>
-          <input type="text" name="accesslink" />
-          <p><b>Description</b></p>
-          <textArea type="text" class="textArea" name="authorbox" /></textArea>
-        </form>
-        <div class="note">
-          <p><b>Note: Uploading and verification of the book may take 2 to 3 days.<b></p>
-        </div>
-      </div>
+        </thead>
+        <tbody>
+          {% for book in books %}
+            <tr>
+              <td>{{ book.title }}</td>
+              <td>{{ book.author }}</td>
+              <td>{{ book.genre }}</td>
+              <td><img src="{{ book.book_cover.url }}" alt="{{ book.title }}" class="book-cover"></td>
+              <td class="action-buttons">
+                <a href="{% url 'edit_book' book.id %}"><button>Edit</button></a>
+                <a href="{% url 'delete_book' book.id %}"><button>Delete</button></a>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
     </div>
-    <script src="{% static 'livrowebapp/js/addbooks.js' %}"></script>
-  </body>
-</html>
+{% endblock %}

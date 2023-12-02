@@ -15,8 +15,9 @@
         <p><b>About user:</b> <br><br>{{ member.about_user }}</p>
       </div>
 
-      <div class="addbutton">
-        <a button class="addbook" href="{% url 'addbooks' %}">Upload Book</a>
+      <div class="addupdatebuttons">
+        <a class="addbook" href="{% url 'addbooks' %}">Upload Book</a>
+        <a class="updatebook" href="{% url 'updatebooks' %}">Update Book</a>
       </div>
 
     </div>

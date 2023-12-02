@@ -107,17 +107,20 @@ border-radius: 10px;
 font-weight: bold;
 }
 
-.addbook{
-text-decoration: none;
-padding-left: 20px;
-padding-right: 20px;
-color: #FFFFFF;
-background-color: #76377b;
-border-radius: 10px;
-font-weight: bold;
-margin-top: 10px;
-margin-left: 10px;
-
+.addupdatebuttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px; /* Adjust this margin as needed */
+}
+  
+.addbook,
+.updatebook {
+  text-decoration: none;
+  padding: 10px 20px;
+  color: #FFFFFF;
+  background-color: #76377b;
+  border-radius: 10px;
+  font-weight: bold;
 }
 
 

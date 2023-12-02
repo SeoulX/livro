@@ -1,5 +1,5 @@
 from datetime import datetime
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import *
 from .forms import *
 from django.contrib import messages
@@ -91,6 +91,43 @@ def addbooks(request):
     else:
         formBook = BookForm()
     return render(request, 'livrowebapp/addbooks.html', {'member': member_data})
+def updatebooks(request):
+    member_data = request.session.get('member', None)
+    if member_data['type_user'] == 'Writer':
+        books = Book.objects.filter(uploader_user=member_data['username'])
+        return render(request, 'livrowebapp/updatebooks.html', {'member': member_data, 'books': books})
+    else:
+        return redirect('profile_writer')
+def edit_book(request, book_id):
+    member_data = request.session.get('member', None)
+    if member_data['type_user'] == 'Writer':
+        book = get_object_or_404(Book, id=book_id, uploader_user=member_data['username'])
+        if request.method == 'POST':
+            form = BookForm(request.POST, request.FILES, instance=book)
+            if form.is_valid():
+                form.save()
+                messages.success(request, 'Book updated successfully!')
+                return redirect('updatebooks')
+            else:
+                messages.error(request, 'Error updating the book. Please check the form.')
+        else:
+            form = BookForm(instance=book)
+        return render(request, 'livrowebapp/editbooks.html', {'member': member_data, 'form': form, 'book': book})
+    else:
+        # Redirect or handle the case when a non-writer tries to edit a book
+        return redirect('profile_writer')
+def delete_book(request, book_id):
+    member_data = request.session.get('member', None)
+    if member_data['type_user'] == 'Writer':
+        book = get_object_or_404(Book, id=book_id, uploader_user=member_data['username'])
+        if request.method == 'POST':
+            book.delete()
+            messages.success(request, 'Book deleted successfully!')
+            return redirect('updatebooks')
+        return render(request, 'livrowebapp/delete_book.html', {'member': member_data, 'book': book})
+    else:
+        # Redirect or handle the case when a non-writer tries to delete a book
+        return redirect('profile_writer')
 def home(request):
     return render(request, 'livrowebapp/home.html')
 def browse(request):
@@ -101,5 +138,3 @@ def fantasy(request):
     return render(request, 'livrowebapp/books/fantasy.html')
 def action(request):
     return render(request, 'livrowebapp/books/action.html')
-def updatebooks(request):
-    return render(request, 'livrowebapp/updatebooks.html')
