@@ -36,12 +36,21 @@ def signin(request):
         return render(request, 'livrowebapp/signin.html')
 def signup(request):
     if request.method == "POST":
+        usrname = request.POST.get('username')
         passw = request.POST.get('passw')
         confirmpass = request.POST.get('confirmpass')
         if(passw == confirmpass):
             form = Memberform(request.POST or None)
             if form.is_valid():
                 member = form.save()
+                member_active = Member.objects.get(username=usrname, password=passw)
+                request.session['member'] = {
+                    'username': member_active.username,
+                    'email':member_active.email,
+                    'password' : member_active.password,
+                    'type_user': member_active.type_user,
+                    'about_user': member_active.about_user
+                }
                 if member.type_user == 'Reader':
                     messages.success(request, ('Thanks for Signing Up!'))
                     return redirect('browse_reader')
