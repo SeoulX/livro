@@ -6,6 +6,7 @@ from django.contrib import messages
 from django.db.models import Q
 from django.http import JsonResponse
 from functools import wraps
+from django.contrib.auth.hashers import make_password, check_password
 
 
 
@@ -41,30 +42,37 @@ def signin(request):
 def signup(request):
     if request.method == "POST":
         usrname = request.POST.get('username')
-        passw = request.POST.get('passw')
+        mail = request.POST.get('email')
+        passw = request.POST.get('password')
         confirmpass = request.POST.get('confirmpass')
-        if(passw == confirmpass):
+        if passw == confirmpass:
             form = Memberform(request.POST or None)
             if form.is_valid():
-                member = form.save()
-                member_active = Member.objects.get(username=usrname, password=passw)
-                request.session['member'] = {
-                    'username': member_active.username,
-                    'email':member_active.email,
-                    'password' : member_active.password,
-                    'type_user': member_active.type_user,
-                    'about_user': member_active.about_user
-                }
-                if member.type_user == 'Reader':
-                    messages.success(request, ('Thanks for Signing Up!'))
-                    return redirect('browse_reader')
-                elif member.type_user == 'Writer':
-                    messages.success(request, ('Thanks for Signing Up!'))
-                    return redirect('browse_writer')
+                member = form.save(commit=False)
+                member.password = make_password(passw)  # Hash the password
+                member.save()
+
+                # Use check_password to verify the password
+                if check_password(passw, member.password):
+                    request.session['member'] = {
+                        'username': member.username,
+                        'email': member.email,
+                        'password': member.password,
+                        'type_user': member.type_user,
+                        'about_user': member.about_user
+                    }
+                    if member.type_user == 'Reader':
+                        messages.success(request, ('Thanks for Signing Up!'))
+                        return redirect('browse_reader')
+                    elif member.type_user == 'Writer':
+                        messages.success(request, ('Thanks for Signing Up!'))
+                        return redirect('browse_writer')
+                else:
+                    messages.error(request, ('Password Not Match!'))
         else:
             messages.error(request, ('Password Not Match!'))
     else:    
-        return render(request, 'livrowebapp/signup.html')  
+        return render(request, 'livrowebapp/signup.html')
 def aboutus(request):
     return render(request, 'livrowebapp/aboutus.html')
 def aboutus_logged(request):

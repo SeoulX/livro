@@ -4,7 +4,7 @@ from .models import *
 class Memberform(forms.ModelForm):
     class Meta:
         model = Member
-        fields = ['username', 'email', 'password', 'type_user', 'about_user']
+        fields = ['username', 'email', 'password', 'type_user']
 
 class BookForm(forms.ModelForm):
     class Meta:
