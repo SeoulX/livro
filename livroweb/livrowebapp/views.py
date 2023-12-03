@@ -8,6 +8,7 @@ from django.http import JsonResponse
 from functools import wraps
 
 
+
 def land(request):
     return render(request, 'livrowebapp/landing.html')
 def signin(request):

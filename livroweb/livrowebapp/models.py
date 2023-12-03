@@ -38,6 +38,7 @@ class Book(models.Model):
 class Comment(models.Model):
     user = models.ForeignKey(Member, on_delete=models.CASCADE)
     book = models.ForeignKey(Book, on_delete=models.CASCADE, related_name='comments')
+    date = models.DateTimeField(auto_now=True) 
     text = models.TextField()
 
 class Rating(models.Model):
