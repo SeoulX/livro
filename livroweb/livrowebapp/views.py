@@ -41,37 +41,31 @@ def signin(request):
         return render(request, 'livrowebapp/signin.html')
 def signup(request):
     if request.method == "POST":
-        usrname = request.POST.get('username')
-        mail = request.POST.get('email')
-        passw = request.POST.get('password')
-        confirmpass = request.POST.get('confirmpass')
-        if passw == confirmpass:
-            form = Memberform(request.POST or None)
-            if form.is_valid():
-                member = form.save(commit=False)
-                member.password = make_password(passw)  # Hash the password
-                member.save()
+        form = Memberform(request.POST or None)
+        if form.is_valid():
+            member = form.save()
 
-                # Use check_password to verify the password
-                if check_password(passw, member.password):
-                    request.session['member'] = {
-                        'username': member.username,
-                        'email': member.email,
-                        'password': member.password,
-                        'type_user': member.type_user,
-                        'about_user': member.about_user
-                    }
-                    if member.type_user == 'Reader':
-                        messages.success(request, ('Thanks for Signing Up!'))
-                        return redirect('browse_reader')
-                    elif member.type_user == 'Writer':
-                        messages.success(request, ('Thanks for Signing Up!'))
-                        return redirect('browse_writer')
-                else:
-                    messages.error(request, ('Password Not Match!'))
-        else:
-            messages.error(request, ('Password Not Match!'))
-    else:    
+            password = request.POST.get('password')
+            confirmpass = request.POST.get('confirmpass')
+
+            if password == confirmpass:
+                request.session['member'] = {
+                    'username': member.username,
+                    'email': member.email,
+                    'type_user': member.type_user,
+                    'about_user': member.about_user
+                }
+
+                if member.type_user == 'Reader':
+                    messages.success(request, 'Thanks for Signing Up!')
+                    return redirect('browse_reader')
+                elif member.type_user == 'Writer':
+                    messages.success(request, 'Thanks for Signing Up!')
+                    return redirect('browse_writer')
+            else:
+                messages.error(request, 'Passwords do not match.')
+                return redirect('browse')  # Redirect to browse.html or any other appropriate page
+    else:
         return render(request, 'livrowebapp/signup.html')
 def aboutus(request):
     return render(request, 'livrowebapp/aboutus.html')
