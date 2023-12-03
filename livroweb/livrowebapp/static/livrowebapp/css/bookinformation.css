@@ -281,40 +281,58 @@ overflow: clip;
 /*Other Books Start*/
 .userbookshelf{
     margin: auto;
-    margin-top: 3%;
+    margin-top: 4.2%;
     width: 100%;
-    padding: 50px;
-    background-color: #FFFFFF;
-    max-width: 800px;
-    border-radius: 20px;
-    box-shadow:  0px 0px 2px 0px rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    max-width: 1300px;
+    border-radius: 10px;
+    box-shadow:  0px 0px 1px 0px rgba(0, 0, 0, 0.8);
     margin-bottom: 5px;
 }
 
-.books p{
+
+
+
+.books button{
     padding: 3px;
     display: inline;
-    border:1px;
-    border-style:solid;
+    border: 1px;
+    border-style: solid;
     border-color: #333333;
     border-radius: 10px;
+    background-color: #FFFFFF;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 4px;
+    font-family: tahoma;
+
 }
 .books{
-    display: block;
+    display: flex;
+    flex-direction: row;
     overflow-x: auto;
     white-space: nowrap;
    
 }
-.userbookshelf p{
-
-    margin-top: -15px;
+.userbookshelf li,ul{
+    max-width: 170px;
+    list-style: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+   
 }
 
+.userbookshelf #p{
+    font-size: large;
+    margin-left: 20px;
+}
 .userbookshelf img{
     width: auto;
     height: 250px;
-    padding: 5px;
+    padding: 3px;
     border-radius: 15px;
 }
+
+
 /*Other Books End*/
 

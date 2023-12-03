@@ -9,49 +9,48 @@
     <p>@{{ member.username }}</p>
     <a button class="editprofile" href="{% url 'manageprofile' %}">Edit Profile</a>
   </div>
+
   <div class="profilebottom">
-    <div class="profilebottomLeft">
-      <div class="aboutuser">
-        <p><b>About user:</b> <br><br>{{ member.about_user }}</p>
+      <div class="profilebottomLeft">
+          <div class="aboutuser">
+
+            <p><b>About user:</b> <br><br>{{ member.about_user }}</p>
+
+          </div>
+  </div>
+
+
+    <!---->
+
+    <div class="profilebottomright">
+
+  <!--START FORLOOP LIBRARY if multiple library-->
+      <div class="userbookshelf">
+          <p id="p"><b>User Bookshelf</b><br>
+                Uploaded Books</p>
+          <div class="books">
+            <table>
+              <tr>
+                   
+              <!--create the forloop dito para mag iterate sa books from library-->
+              <ul>
+                <li><a href="#"> <img class="profileimg"   src="{% static 'livrowebapp/img/book1.png' %}"></a></li>
+                <li><p id ="scifi-title">title</p></li>
+                <li><button type="button" class="scifibtn" value="Science Fiction">Science Fiction</button></li>
+            </ul>
+           <!--endloop-->
+
+      </tr>
+    </table>
+          </div>
+        </div>
+
+  <!--endforloop for LIBRARY-->
+        
+
       </div>
-    </div>
-    <div class="userbookshelf">
-      <p> <b>User Bookshelf</b> <br>
-        Uploaded Books</p>
-      <div class="books">
-        <table>
-          <tr>
-            <th> <a href="#"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a></th>
-            <th> <a href="#"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
-            <th> <a href="#"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
-            <th> <a href="#"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
-            <th> <a href="#"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
-            <th> <a href="#"> <img class="profileicon" src="{% static 'livrowebapp/img/book1.png' %}"></a> </th>
-          </tr>
-          <tr>
-            <td>
-              <p>Fantasy</p>
-            </td>
-            <td>
-              <p>Fantasy</p>
-            </td>
-            <td>
-              <p>Fantasy</p>
-            </td>
-            <td>
-              <p>Fantasy</p>
-            </td>
-            <td>
-              <p>Fantasy</p>
-            </td>
-            <td>
-              <p>Fantasy</p>
-            </td>
-          </tr>
-        </table>
-      </div>
-    </div>
   </div>
 </div>
+
 <script src="{% static 'livrowebapp/js/profile.js' %}"></script>
 {% endblock %}
