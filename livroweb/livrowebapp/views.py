@@ -172,12 +172,28 @@ def custom_login_required(view_func):
 def bookinformation(request, title):
     member_data = request.session.get('member', None)
     book = get_object_or_404(Book, title=title)
+
+    if request.method == 'POST':
+        # Handle comment submission
+        comment_form = CommentForm(request.POST)
+        if comment_form.is_valid():
+            new_comment = comment_form.save(commit=False)
+            new_comment.user = Member.objects.get(username=member_data['username'])  # Assuming the user is logged in
+            new_comment.book = book
+            new_comment.save()
+            return redirect('bookinformation', title=title)  # Redirect to refresh the page
+
+    else:
+        comment_form = CommentForm()
+
+    comments = book.comments.all()
+
     context = {
-        'member': member_data,
         'book': book,
+        'comments': comments,
+        'comment_form': comment_form,
     }
 
-    # Render the book information template with the context
     return render(request, 'livrowebapp/bookinformation.html', context)
 def home(request):
     return render(request, 'livrowebapp/home.html')
