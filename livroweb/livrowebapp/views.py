@@ -4,6 +4,7 @@ from .models import *
 from .forms import *
 from django.contrib import messages
 from django.db.models import Q
+from django.http import JsonResponse
 
 def land(request):
     return render(request, 'livrowebapp/landing.html')
@@ -144,11 +145,10 @@ def delete_book(request, book_id):
         if request.method == 'POST':
             book.delete()
             messages.success(request, 'Book deleted successfully!')
-            return redirect('updatebooks')
-        return render(request, 'livrowebapp/deletebook.html', {'member': member_data, 'book': book})
+            return JsonResponse({'success': True})
+        return JsonResponse({'success': False, 'error': 'Invalid request method'})
     else:
-        # Redirect or handle the case when a non-writer tries to delete a book
-        return redirect('profile_writer')
+        return JsonResponse({'success': False, 'error': 'Permission denied'})
 def bookinformation(request, title):
     member_data = request.session.get('member', None)
     book = get_object_or_404(Book, title=title)
