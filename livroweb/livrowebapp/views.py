@@ -63,6 +63,8 @@ def browse_reader(request):
 def browse_writer(request):
     member_data = request.session.get('member', None)
     all_books = Book.objects.all()
+    for book in all_books:
+        book.genre_list = book.genre.split(', ')
     return render(request, 'livrowebapp/browse_writer.html', {'member': member_data, 'all_books': all_books})
 def profile(request):
     member_data = request.session.get('member', None)
