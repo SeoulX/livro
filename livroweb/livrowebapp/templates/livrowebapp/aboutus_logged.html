@@ -1,26 +1,83 @@
-{% extends 'livrowebapp/home.html' %}
-{% load static %} 
-{% block content %}
-    <link href="{% static 'livrowebapp/css/aboutus_logged.css' %}" rel="stylesheet" />
-
-    <div class="bodies">
-        <div class="aboutus">
-            <h1>About Us</h1>
-        </div>
-        <div class="content">
-            <p>Livro is an online library that provides access to a wide variety of novels, including classics, contemporary fiction, and everything in between. Our mission is to make reading accessible to everyone, regardless of their location or budget.</p>
-            <p>We believe that reading is essential for personal growth and development. It exposes us to new ideas and perspectives, and it helps us to better understand ourselves and the world around us. We are committed to providing a wide selection of novels to meet the needs of all readers.</p>
-        </div>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link href="{% static 'livrowebapp/css/aboutus.css' %}" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>livro</title>
+  </head>
+ 
+  <div class="navbar" id="myNavbar">
+    <div class="logo">
+      <a href="/browse/"><img src="{% static 'livrowebapp/img/logo.png' %}" width="100"/></a>
     </div>
-    <div id="popup-container" class="overlay"></div>
+    <div class="navbarRight">        
+      <tr>
+          <th> <a class="nav" href="/browse/"> Home</a> </th>
+          <th> <a class="nav" href="/aboutus/"> About Us </a> </th>
+          <th> <a id ="login-button" class="nav" href="#"> Login</a></th>
+          <th> <a id ="signup-button" class="nav" href="#"> Sign Up</a> </th>
+        </tr>        
+    </div>
+  </div>
 
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-copyright">
-                <p>Copyright &copy; 2023</p>
-            </div>
-        </div>
-    </footer>
+
+<div>
+  <div class="aboutus"> 
+  </div>
+    <div class="content">
+      <div class="livro_logo">
+        <img src="{% static 'livrowebapp/img/logo.png' %}" alt="Logo" width="500" >
+      </div>
+      <h1>Who We Are</h1>
+        <p>Livro is an online library that provides access to a wide variety of novels, including classics, 
+          contemporary fiction, and everything in between. Our mission is to make reading accessible to 
+          everyone, regardless of their location or budget.</p>
+        <p>We believe that reading is essential for 
+          personal growth and development. It exposes us to new ideas and perspectives, and it helps us to 
+          better understand ourselves and the world around us. We are committed to providing a wide selection 
+          of novels to meet the needs of all readers.</p>
+          
+      <h1>A Few Things You Can Do On LIVRO</h1>
+        <p>Browse your fvaorite books anytime and anywhere!</p>
+        <p>See where you can buy your favorite book</p>
+        <p>Recommend books by rating them or by posting a comment</p>
+        <p>Have your personalized library by liking a book!</p>
+        <p>Be one of our verified authors and have a chance to post your books on LIVRO!</p>
+      
+        <h2>Meet The Team Behind LIVRO</h2>
+      
+        <img src="{% static 'livrowebapp/img/team_livro.png' %}" alt="Logo" width="800" >
+        <p>Embark on a journey into the world of innovation and technology with the exceptional team of computer science students from Technological Institute of the Philippines (TIP) Manila. This vibrant group of aspiring minds forms the backbone of tomorrow's tech leaders, bringing together a diverse range of skills, talents, and a shared passion for all things computing.</p>
+        <p>At the heart of their collaboration lies a commitment to pushing the boundaries of what's possible. Fueled by curiosity and a hunger for knowledge, these students are not merely learners but pioneers, consistently challenging themselves to think beyond the conventional and embrace the cutting edge. Their dedication to staying ahead in the ever-evolving field of computer science is evident in every project they undertake.</p>
+        <p>But it's not just about code and algorithms. This team understands the importance of a holistic approach to computer science. Beyond the lines of code, you'll find individuals with a keen sense of problem-solving, critical thinking, and a deep appreciation for the societal impact of technology. They are not just engineers; they are architects of the digital future.</p>
+        <p>As they continue to push the boundaries, break barriers, and contribute to the ever-evolving field of computer science, this dynamic team from TIP Manila stands as a testament to the limitless possibilities that arise when passion meets knowledge. Together, they are not just students; they are the architects of the digital future, poised to leave an indelible mark on the world of technology.</p>
+        <h1>Names Of The Members From Left To Right</h1>
+        <p>Jan Michael Miravalles</p>
+        <p>Carl Lawrence Lontac</p>
+        <p>Christine Mae Papillero</p>
+        <p>Andrian Binas</p>
+        <p>Reign Marielle Gallego</p>
+        <p>Charles Justin Lee Condolon</p>
+
+        <h2>A Message From The Team</h2>
+        <p1>Hi fellow book enthusiast! Thank you for using LIVRO! I hope in this way, you find happiness within the story. Lovelots!</p1><br></br>
+
+      </div>
+      
+  </div>
   
-    <script src="{% static 'livrowebapp/js/landing.js' %}"></script>
-{% endblock %}
+  <div id="popup-container" class="overlay"></div>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-copyright">
+        <p>Copyright &copy; 2023</p>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="{% static 'livrowebapp/js/landing.js' %}"></script>
+  </body>
+</html>
