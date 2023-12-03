@@ -177,3 +177,7 @@ def browse_content(request):
     member_data = request.session.get('member', None)
     all_books = Book.objects.all()
     return render(request, 'livrowebapp/browse-content.html', {'member': member_data, 'all_books': all_books})
+def logout(request):
+    if 'member' in request.session:
+        del request.session['member']
+    return redirect('browse')
