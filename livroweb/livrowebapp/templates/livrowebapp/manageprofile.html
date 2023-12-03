@@ -26,7 +26,7 @@
     <div class="contents">
         <div class="profilebg"> 
             <img src="{% static 'livrowebapp/img/profilepicture.png' %}"/>
-            <p>@username</p>
+            <p>@{{ member.username }}e</p>
         </div>
 
         <div class="information">
@@ -34,7 +34,7 @@
             <div class="user">
                 <p> <b>About user</b></p>
                 <div class="info">
-                    <textarea type="text" id="abtreader" name="abtreader"></textarea>
+                    <textarea type="text" id="abtreader" name="abtreader" placeholder={{ member.about_user }}></textarea>
                 </div>
             </div>
 
@@ -45,27 +45,27 @@
                     <table>
                         <tr>
                             <th><label for="username">Username:</label></th>
-                            <th><input type="text" id="username" name="username"></th>
+                            <th><input type="text" id="username" name="username"placeholder={{ member.username }}></th>
                         </tr>
 
                         <tr>
                             <th><label for="email">Email Address:</label></th>
-                            <th><input type="email" id="email" name="email"></th>
+                            <th><input type="email" id="email" name="email" placeholder={{ member.email }}></th>
                         </tr>
 
                         <tr>
                             <th><label for="current_password">Current Password:</label></th>
-                            <th><input type="password" id="cpassword" name="current_password"></th>
+                            <th><input type="password" id="cpassword" name="current_password" placeholder="************"></th>
                         </tr>
 
                         <tr>
                             <th><label for="new_password">New Password:</label></th>
-                            <th><input type="password" id="npassword" name="new_password"></th>
+                            <th><input type="password" id="npassword" name="new_password" placeholder="************"></th>
                         </tr>
 
                         <tr>
                             <th><label for="confirm_new_password">Confirm New Password:</label></th>
-                            <th><input type="password" id="cnpassword" name="confirm_new_password"></th>
+                            <th><input type="password" id="cnpassword" name="confirm_new_password" placeholder="************"></th>
                         </tr>
                     </table>
                 </div>
