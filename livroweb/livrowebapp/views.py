@@ -69,7 +69,10 @@ def aboutus_logged(request):
     return render(request, 'livrowebapp/aboutus_logged.html', {'member': member_data})
 def browse_reader(request):
     member_data = request.session.get('member', None)
-    return render(request, 'livrowebapp/browse_reader.html', {'member': member_data})
+    all_books = Book.objects.all()
+    for book in all_books:
+        book.genre_list = book.genre.split(', ')
+    return render(request,  'livrowebapp/browse_reader.html', {'member': member_data, 'all_books': all_books})
 def browse_writer(request):
     member_data = request.session.get('member', None)
     all_books = Book.objects.all()
@@ -161,7 +164,11 @@ def bookinformation(request, title):
 def home(request):
     return render(request, 'livrowebapp/home.html')
 def browse(request):
-    return render(request, 'livrowebapp/browse.html')
+    member_data = request.session.get('member', None)
+    all_books = Book.objects.all()
+    for book in all_books:
+        book.genre_list = book.genre.split(', ')
+    return render(request, 'livrowebapp/browse.html', {'member': member_data, 'all_books': all_books})
 def fantasy(request):
     return render(request, 'livrowebapp/books/fantasy.html')
 def action(request):
@@ -170,3 +177,7 @@ def browse_content(request):
     member_data = request.session.get('member', None)
     all_books = Book.objects.all()
     return render(request, 'livrowebapp/browse-content.html', {'member': member_data, 'all_books': all_books})
+def logout(request):
+    if 'member' in request.session:
+        del request.session['member']
+    return redirect('browse')
