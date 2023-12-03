@@ -149,12 +149,19 @@ def delete_book(request, book_id):
     else:
         # Redirect or handle the case when a non-writer tries to delete a book
         return redirect('profile_writer')
+def bookinformation(request, title):
+    member_data = request.session.get('member', None)
+    book = get_object_or_404(Book, title=title)
+    context = {
+        'book': book,
+    }
+
+    # Render the book information template with the context
+    return render(request, 'livrowebapp/bookinformation.html', context)  
 def home(request):
     return render(request, 'livrowebapp/home.html')
 def browse(request):
     return render(request, 'livrowebapp/browse.html')
-def bookinformation(request):
-    return render(request, 'livrowebapp/bookinformation.html')
 def fantasy(request):
     return render(request, 'livrowebapp/books/fantasy.html')
 def action(request):
