@@ -11,7 +11,11 @@
 
     <div class="navbar" id="myNavbar">
       <div class="logo">
+        {% if member.type_user == 'Reader' %}
+        <a href="/browse_reader/"><img src="{% static 'livrowebapp/img/logo.png' %}" width="100"/></a>
+        {% elif member.type_user == 'Writer' %}
         <a href="/browse_writer/"><img src="{% static 'livrowebapp/img/logo.png' %}" width="100"/></a>
+        {% endif %} 
       </div>
 
       <div class="navbarRight">        
