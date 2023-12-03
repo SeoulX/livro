@@ -5,6 +5,8 @@ from .forms import *
 from django.contrib import messages
 from django.db.models import Q
 from django.http import JsonResponse
+from functools import wraps
+
 
 def land(request):
     return render(request, 'livrowebapp/landing.html')
@@ -61,7 +63,7 @@ def signup(request):
         else:
             messages.error(request, ('Password Not Match!'))
     else:    
-        return render(request, 'livrowebapp/signup.html')
+        return render(request, 'livrowebapp/signup.html')  
 def aboutus(request):
     return render(request, 'livrowebapp/aboutus.html')
 def aboutus_logged(request):
@@ -152,23 +154,50 @@ def delete_book(request, book_id):
         return JsonResponse({'success': False, 'error': 'Invalid request method'})
     else:
         return JsonResponse({'success': False, 'error': 'Permission denied'})
+def custom_login_required(view_func):
+    @wraps(view_func)
+    def _wrapped_view(request, *args, **kwargs):
+        # Check if the user is signed in using your custom session logic
+        member_data = request.session.get('member', None)
+        if not member_data:
+            # If not signed in, redirect to your signin page or any other page
+            return redirect('signin')
+
+        # If signed in, proceed with the original view function
+        return view_func(request, *args, **kwargs)
+
+    return _wrapped_view
+@custom_login_required
+
 def bookinformation(request, title):
     member_data = request.session.get('member', None)
     book = get_object_or_404(Book, title=title)
     context = {
+        'member': member_data,
         'book': book,
     }
 
     # Render the book information template with the context
-    return render(request, 'livrowebapp/bookinformation.html', context)  
+    return render(request, 'livrowebapp/bookinformation.html', context)
 def home(request):
     return render(request, 'livrowebapp/home.html')
+
 def browse(request):
     member_data = request.session.get('member', None)
+
+    # Check for the login_required query parameter
+    login_required_param = request.GET.get('login_required', None)
+    if login_required_param:
+        messages.warning(request, 'You need to sign in first.')
+
     all_books = Book.objects.all()
     for book in all_books:
         book.genre_list = book.genre.split(', ')
-    return render(request, 'livrowebapp/browse.html', {'member': member_data, 'all_books': all_books})
+
+    # Include the messages in the template context
+    messages_data = messages.get_messages(request)
+
+    return render(request, 'livrowebapp/browse.html', {'member': member_data, 'all_books': all_books, 'messages_data': messages_data})
 def fantasy(request):
     return render(request, 'livrowebapp/books/fantasy.html')
 def action(request):
