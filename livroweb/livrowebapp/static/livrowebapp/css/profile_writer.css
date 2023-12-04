@@ -58,14 +58,15 @@
 }
 .userbookshelf li,ul{
     max-width: 170px;
+    max-height: 350px;
     list-style: none;
     text-overflow: ellipsis;
-    white-space: nowrap;
+    white-space: normal;
    
 }
 
 .userbookshelf #p{
-    margin-bottom: -9px;
+    margin-bottom: 10px;
     margin-left: 20px;
 }
 .userbookshelf img{

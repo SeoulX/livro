@@ -23,33 +23,25 @@
     </div>
 
   <div class="profilebottomright">
-
-      <!--START FORLOOP LIBRARY if multiple library-->
           <div class="userbookshelf">
-              <p id="p" ><b>User Bookshelf</b><br>
-                    Uploaded Books</p>
+              <p id="p" ><b>User Bookshelf</b><br>Uploaded Books</p>
               <div class="books">
                 <table>
                   <tr>
-                  
-                    
-                  <!--create the forloop dito para mag iterate sa books from library-->
-                  <ul>
-                    <li><a href="#"> <img class="profileimg"   src="{% static 'livrowebapp/img/book1.png' %}"></a></li>
-                    <li><p id ="scifi-title">title</p></li>
-                    <li><button type="button" class="scifibtn" value="Science Fiction">Science Fiction</button></li>
-                </ul>
-               <!--endloop-->
-              
-       
-          </tr>
-        </table>
+                    {% for book in all_books %}
+                        <ul>
+                            {% if member.username == ' ' %}
+                              <li><a href="#" id="bookLog"><img class="profileimg" src="{{ book.book_cover.url }}"></a></li>
+                            {% else %}
+                                <li><a href="{% url 'bookinformation' book.title %}"><img class="profileimg" src="{{ book.book_cover.url }}"></a></li>
+                            {% endif %}                
+                            <li><p id="book-title">{{ book.title }}</p></li>
+                        </ul>
+                    {% endfor %}                  
+                  </tr>
+                </table>
               </div>
             </div>
-    
-      <!--endforloop for LIBRARY-->
-     
-  
           </div>
       </div>
     </div>

@@ -95,8 +95,11 @@ def browse_reader(request):
     except Exception as e:
         # Add appropriate error handling based on your application needs
         print(f"Error: {e}")
-
-    return render(request, 'livrowebapp/browse_reader.html', {'member': member_data, 'books_by_genre': books_by_genre, 'genres_to_display': genres_to_display})
+        
+    all_books = Book.objects.all()
+    for book in all_books:
+        book.genre_list = book.genre.split(', ')
+    return render(request, 'livrowebapp/browse_reader.html', {'member': member_data, 'books_by_genre': books_by_genre, 'genres_to_display': genres_to_display, 'all_books': all_books})
 def browse_writer(request):
     member_data = request.session.get('member', None)
 
@@ -120,14 +123,20 @@ def browse_writer(request):
     except Exception as e:
         # Add appropriate error handling based on your application needs
         print(f"Error: {e}")
+    all_books = Book.objects.all()
+    for book in all_books:
+        book.genre_list = book.genre.split(', ')
+    return render(request, 'livrowebapp/browse_reader.html', {'member': member_data, 'books_by_genre': books_by_genre, 'genres_to_display': genres_to_display, 'all_books': all_books})
 
-    return render(request, 'livrowebapp/browse_writer.html', {'member': member_data, 'books_by_genre': books_by_genre, 'genres_to_display': genres_to_display})
 def profile(request):
     member_data = request.session.get('member', None)
     return render(request, 'livrowebapp/profile.html', {'member': member_data})
 def profile_writer(request):
     member_data = request.session.get('member', None)
-    return render(request, 'livrowebapp/profile_writer.html', {'member': member_data})
+    all_books = Book.objects.all()
+    for book in all_books:
+        book.genre_list = book.genre.split(', ')
+    return render(request, 'livrowebapp/profile_writer.html', {'member': member_data, 'all_books': all_books})
 def manageprofile(request):
     member_data = request.session.get('member', None)
     return render(request, 'livrowebapp/manageprofile.html', {'member': member_data})
