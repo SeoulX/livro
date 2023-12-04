@@ -87,7 +87,7 @@ def browse_reader(request):
 
         # Continue with genre-specific top 10 books
         for genre in genres_to_display:
-            q_objects = Q(genre=genre) | Q(genre__contains=genre + ',')
+            q_objects = Q(genre=genre) | Q(genre__contains=genre + ', ')
             books_with_likes = Book.objects.filter(q_objects).annotate(like_count=Count('userfave'))
             sorted_books = books_with_likes.order_by('-like_count')[:10]
             books_by_genre[genre] = sorted_books
@@ -115,7 +115,7 @@ def browse_writer(request):
 
         # Continue with genre-specific top 10 books
         for genre in genres_to_display:
-            q_objects = Q(genre=genre) | Q(genre__contains=genre + ',')
+            q_objects = Q(genre=genre) | Q(genre__contains=genre + ',')|Q(genre__contains=' '+genre)
             books_with_likes = Book.objects.filter(q_objects).annotate(like_count=Count('userfave'))
             sorted_books = books_with_likes.order_by('-like_count')[:10]
             books_by_genre[genre] = sorted_books
