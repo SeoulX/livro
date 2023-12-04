@@ -127,7 +127,6 @@ def browse_writer(request):
     for book in all_books:
         book.genre_list = book.genre.split(', ')
     return render(request, 'livrowebapp/browse_reader.html', {'member': member_data, 'books_by_genre': books_by_genre, 'genres_to_display': genres_to_display, 'all_books': all_books})
-
 def profile(request):
     member_data = request.session.get('member', None)
     return render(request, 'livrowebapp/profile.html', {'member': member_data})
@@ -270,21 +269,36 @@ def home(request):
     return render(request, 'livrowebapp/home.html')
 
 def browse(request):
-    member_data = request.session.get('member', None)
 
     # Check for the login_required query parameter
     login_required_param = request.GET.get('login_required', None)
     if login_required_param:
         messages.warning(request, 'You need to sign in first.')
 
+    genres_to_display = ['Action', 'Fantasy', 'Young Adult', 'Comedy', 'Romance', 'Non-Fiction', 'Science Fiction', 'Horror']
+
+    books_by_genre = {}
+
+    try:
+        # Add a key 'all' to represent overall top 10 books
+        books_with_likes_all = Book.objects.annotate(like_count=Count('userfave'))
+        sorted_books_all = books_with_likes_all.order_by('-like_count')[:10]
+        books_by_genre[''] = sorted_books_all
+
+        # Continue with genre-specific top 10 books
+        for genre in genres_to_display:
+            q_objects = Q(genre=genre) | Q(genre__contains=genre + ',')
+            books_with_likes = Book.objects.filter(q_objects).annotate(like_count=Count('userfave'))
+            sorted_books = books_with_likes.order_by('-like_count')[:10]
+            books_by_genre[genre] = sorted_books
+
+    except Exception as e:
+        # Add appropriate error handling based on your application needs
+        print(f"Error: {e}")
     all_books = Book.objects.all()
     for book in all_books:
         book.genre_list = book.genre.split(', ')
-
-    # Include the messages in the template context
-    messages_data = messages.get_messages(request)
-
-    return render(request, 'livrowebapp/browse.html', {'member': member_data, 'all_books': all_books, 'messages_data': messages_data})
+    return render(request, 'livrowebapp/browse.html', { 'books_by_genre': books_by_genre, 'genres_to_display': genres_to_display, 'all_books': all_books})
 def fantasy(request):
     return render(request, 'livrowebapp/books/fantasy.html')
 def action(request):
