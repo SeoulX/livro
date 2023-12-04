@@ -262,9 +262,10 @@ def bookinformation(request, title):
         'likes_count': likes_count,
         'user': member_data,
         'liked_status': liked_status,
+        'member': member_data,
     }
 
-    return render(request, 'livrowebapp/bookinformation.html',  context)
+    return render(request, 'livrowebapp/bookinformation.html', context)
 def home(request):
     return render(request, 'livrowebapp/home.html')
 
