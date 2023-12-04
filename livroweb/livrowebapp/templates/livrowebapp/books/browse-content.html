@@ -31,12 +31,13 @@
                 <div class="books">
                     <table>
                         <tr>
+                          {% for book1 in all_books %}
                             {% for book in books %}
                                 <td>
                                     <ul>
                                         <li><a href="{% url 'bookinformation' book.title %}"><img class="profileimg" src="{{ book.book_cover.url }}"></a></li>
                                         <li><p id="book-title">{{ book.title }}</p></li>
-                                        {% for genre in book.genre_list %}
+                                        {% for genre in book1.genre_list %}
                                             <button type="button" class="genre-btn" value="{{ genre }}">
                                                 {{ genre }}
                                             </button>
@@ -44,6 +45,7 @@
                                     </ul>
                                 </td>
                             {% endfor %}
+                          {% endfor %}
                         </tr>
                     </table>
                 </div>

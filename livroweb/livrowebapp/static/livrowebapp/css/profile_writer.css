@@ -1,6 +1,6 @@
 .profilebottomLeft{
     flex-direction: column;
-    margin-left: 20px;
+    margin-left: 43px;
 }
 
 .profilebottom{
@@ -28,6 +28,7 @@
     background-color: #FFFFFF;
     max-width: 1300px;
     border-radius: 20px;
+    margin-left: 200px;
     box-shadow:  0px 0px 2px 0px rgba(0, 0, 0, 0.8);
     margin-bottom: 5px;
 }
@@ -56,10 +57,11 @@
     white-space: nowrap;
    
 }
-.userbookshelf li,ul{
+.userbookshelf ul{
     max-width: 170px;
     max-height: 350px;
     list-style: none;
+    margin-bottom: 15px;
     text-overflow: ellipsis;
     white-space: normal;
    
@@ -72,7 +74,7 @@
 .userbookshelf img{
     width: auto;
     height: 250px;
-    padding: 3px;
+    padding: 0px;
     border-radius: 15px;
 }
 
