@@ -35,7 +35,11 @@
 <div id="popup-container" class="overlay">
 </div>
 
+<div class= "container">
+    {%block content%}
 {% include 'livrowebapp/books/browse-content.html' %}
+    {%endblock%}
+<div>
 <script src="{% static 'livrowebapp/js/browse.js' %}"></script>
 </body>
 </html>

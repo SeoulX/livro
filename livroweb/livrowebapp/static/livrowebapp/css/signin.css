@@ -1,4 +1,4 @@
-input{
+.wrap input{
 
 padding: 8px;
 box-sizing: border-box;
@@ -13,7 +13,7 @@ margin: auto;
 }
 
 
-form{
+.wrap form{
  
   font-family: tahoma;
 }
@@ -44,7 +44,7 @@ input[type=submit]{
   margin-bottom: -40px;
 }
 
-h1{
+.wrap h1{
 display: flex;
 width: 270px;
 height: 50px;
@@ -119,7 +119,7 @@ label[for=donthaveacc]{
   
  
 }
-a{
+.wrap a{
   display: inline-block;
   margin-left: 02px;
 }

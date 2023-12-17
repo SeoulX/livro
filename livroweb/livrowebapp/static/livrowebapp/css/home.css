@@ -16,13 +16,17 @@ a{display: inline-block;}
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 9px;
-  position:sticky;
+  position: fixed;
+  left: 0; 
+  right: 0; 
+  height: 70.1px;
+  width: 100%; 
+  z-index: 999;
+  margin-bottom: 70.1px;
   top: 0px;
   box-shadow: 0 2px 15px 0 rgba(0,0,0,.2);
     
 }
-
 .navbarRight img{
   position: relative;
   width: 40px;
@@ -46,6 +50,10 @@ height: 50px;
 
 }
 /* NAVBAR END!! */
+
+.container {
+  margin-top: 70.1px;
+}
 
 @media
 (prefers-reduced-motion: no-preference) {

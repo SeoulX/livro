@@ -1,35 +1,13 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
+{% extends 'livrowebapp/browse.html' %}
+{% load static %} 
+{% block content %}
     <link href="{% static 'livrowebapp/css/aboutus.css' %}" rel="stylesheet" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>livro</title>
-  </head>
- 
-  <div class="navbar" id="myNavbar">
-    <div class="logo">
-      <a href="/browse/"><img src="{% static 'livrowebapp/img/logo.png' %}" width="100"/></a>
-    </div>
-    <div class="navbarRight">        
-      <tr>
-          <th> <a class="nav" href="/browse/"> Home</a> </th>
-          <th> <a class="nav" href="/aboutus/"> About Us </a> </th>
-          <th> <a id ="login-button" class="nav" href="#"> Login</a></th>
-          <th> <a id ="signup-button" class="nav" href="#"> Sign Up</a> </th>
-        </tr>        
-    </div>
-  </div>
 
-
-<div>
-  <div class="aboutus"> 
-  </div>
     <div class="content">
       <div class="livro_logo">
         <img src="{% static 'livrowebapp/img/logo.png' %}" alt="Logo" width="500" >
       </div>
+      
       <h1>Who We Are</h1>
         <p>Livro is an online library that provides access to a wide variety of novels, including classics, 
           contemporary fiction, and everything in between. Our mission is to make reading accessible to 
@@ -65,19 +43,16 @@
         <p1>Hi fellow book enthusiast! Thank you for using LIVRO! I hope in this way, you find happiness within the story. Lovelots!</p1><br></br>
 
       </div>
-      
-  </div>
-  
-  <div id="popup-container" class="overlay"></div>
 
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-copyright">
-        <p>Copyright &copy; 2023</p>
-      </div>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-copyright">
+      <p>Copyright &copy; 2023</p>
     </div>
-  </footer>
-  
-  <script src="{% static 'livrowebapp/js/landing.js' %}"></script>
-  </body>
+  </div>
+</footer>
+
+<script src="{% static 'livrowebapp/js/landing.js' %}"></script>
 </html>
+{%endblock%}

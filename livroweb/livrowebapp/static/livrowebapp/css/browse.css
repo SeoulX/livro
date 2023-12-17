@@ -17,12 +17,16 @@ a{display: inline-block;}
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 9px;
-    position: sticky;
+    position: fixed;
+    left: 0; 
+    right: 0; 
+    height: 70.1px;
+    width: 100%; 
+    z-index: 999;
     top: 0px;
     box-shadow: 0 2px 15px 0 rgba(0,0,0,.2);
       
-}
+  }
 
 .logo img {
  width: auto;
@@ -40,6 +44,7 @@ a{display: inline-block;}
     font-weight: bold;
     margin-right: 40px;
     margin-top: 5px;
+    
  
 }
 /* NAVBAR END!! */
@@ -53,6 +58,11 @@ a{display: inline-block;}
     z-index: 1000; 
     display: none; 
 }
+
+.container {
+    margin-top: 70.1px;
+  }
+  
 
 #popup-container.overlay.show {
     display: flex;
