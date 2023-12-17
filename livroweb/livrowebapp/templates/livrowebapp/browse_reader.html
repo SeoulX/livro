@@ -4,14 +4,16 @@
 
 <link href="{% static 'livrowebapp/css/browse_writer.css' %}" rel="stylesheet" />
 
-<div class="bootstrap-content">
+<div class="bootstrap-content" style="background-color: beige;>
     <link href={%static 'livrowebapp/scss/bootstraplink.css'%} rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     {% if messages %}
         {% for message in messages%}
             <div class="alert alert-warning alert-dismissible fade show" role="alert">
                 {{ message }}
                 <strong><a href="/#/"> See How to Use Livro </a></strong>
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" 
+                style="background-color: transparent; border: none; padding: 0.25rem 0.5rem; line-height: 1; color: black;  font-weight: bold;"
+                 aria-label="Close"> &times;</button>
             </div>
         {% endfor %}
     {% endif%}
